@@ -2,4 +2,4 @@ smaple repo
 
 First stash
 
-Second stash
+new stash

@@ -1,0 +1,7 @@
+multiple classes implementing the same interface
+single class implementing multiple interfaces
+inheritance in interface(multiple inheritance, hybrid inheritance)
+
+Interfaces can duplicate the methods once only.
+references using any interfaces and classes.
+

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        
+        
+        .nav-link:hover{
+            background-color: darkslategray;
+        }
+        .card {
+            border: 0;
+            width: 150px;
+            height: 150px; 
+            margin: 5px;
+            perspective: 1000px; 
+        } 
+        .card-inner { 
+            position: relative; 
+            text-align: center; 
+            transition: transform 0.6s; 
+            transform-style: preserve-3d; 
+        } 
+        .card:hover .card-inner { 
+            transform: rotateY(180deg); 
+        } 
+        .card-front, .card-back { 
+            position: absolute; 
+            backface-visibility: hidden; 
+        } 
+        .card-back { 
+            height: 150px;
+            transform: rotateY(180deg); 
+            background-color: dodgerblue;
+            color: white;
+        }
+        p{
+            position: absolute;
+            top: 125px;
+            width: 100%;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md p-0 bg-primary navbar-light mb-4">
+        <div class="container-xxl">
+            
+            <div class="navbar-header">
+                
+                <!-- toggle button for mobile nav -->
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarContent"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                ><span class="navbar-toggler-icon"></span></button>
+                
+                <span class="navbar-brand text-white">Contact Manager</span>
+            </div>
+
+                
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item bg-danger">
+                      <a class="nav-link text-white" href="#contact">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#Table">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#endform">Help</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact form -->
+    <section id="contact">
+        <div class="row p-5 pt-2 pb-2  d-flex">
+            <div class="col-md-4 mt-0 bg-light rounded">
+                <form>
+                    <label for="Name" class="form-label mt-2">Name</label>
+                    <div class="mb-2 input-group">
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                    </div>
+               
+                    <label for="Gender" class="form-label">Gender</label>
+                    <div class="mb-2 input-group">
+                        <select name="gender" id="gender" class="form-select">
+                            <option value="" selected>Select Option</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                
+                    <label for="Email" class="form-label">Email</label>
+                    <div class="mb-2 input-group">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                
+                    <label for="phone" class="form-label">Phone</label>
+                    <div class="mb-2 input-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                    </div>
+
+                    <div class="mb-2 text-center">
+                        <button type="button" class="btn btn-success mb-4" style="width: 100%;">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 p-5 align-items-center justify-content-center">
+                <div class="headng">
+                    <h3 class="m-0">Contacts (Cards View)</h3> 
+                    <h6>Hover the mouse on card to see details</h6>
+                </div>
+                <div class="pt-2 d-md-flex">
+                    <div class="card"> 
+                        <div class="card-inner"> 
+                            <div class="card-front"> 
+                                <div class="position-relative">
+                                    <img src= 
+                                        "avatar2.png"
+                                            style="width:150px;height: 150px;">
+                                            
+                                    <p class="bg-dark text-white" style="opacity: 0.5;">Peter Parker</p>
+
+                                </div>
+                            </div> 
+                            <div class="card-back"> 
+                                <h3>Peter Parker</h3> <br>
+                                <a type="email" href="peter@gmail.com" class="text-white"><i class="fa fa-envelope-o"></i>peter@gmail.com</a>
+                                <a type="tel"><i class="fa fa-phone" aria-hidden="true"></i>547-165-2403</a>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="card">
+                        <div class="card-inner"> 
+                            <div class="card-front"> 
+                                <div class="position-relative">
+
+                                    <img src= 
+                                        "avatar1.png"
+                                            style="width:150px;height: 150px;"> 
+                                    <p class="bg-dark text-white" style="opacity: 0.5;">James Cameron</p>
+                                </div>
+                            </div> 
+                              
+                            <div class="card-back"> 
+                                <h3>James Cameron</h3><br>
+                                <a type="email" href="james@gmail.com" class="text-white"><i class="fa fa-envelope-o"></i>james@gmail.com</a> 
+                                <a type="tel"><i class="fa fa-phone" aria-hidden="true"></i>247-525-2523</a>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="card">
+                        <div class="card-inner"> 
+                            <div class="card-front">
+                                <div class="position-relative">
+
+                                    <img src= 
+                                        "avatar3.png"
+                                            style="width:150px;height: 150px;"> 
+                                    <p class="bg-dark text-white" style="opacity: 0.5;">Maria Hili</p>
+                                </div> 
+                            </div> 
+                              
+                            <div class="card-back"> 
+                                <h3>Maria Hili</h3> <br><br>
+                                <a type="email" href="maria@gmail.com" class="text-white"><i class="fa fa-envelope-o"></i>maria@gmail.com</a> 
+                                <a type="tel"><i class="fa fa-phone" aria-hidden="true"></i>647-395-7673</a>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="card">
+                        <div class="card-inner"> 
+                            <div class="card-front">
+                                <div class="position-relative">
+
+                                    <img src= 
+                                        "avatar4.jpg"
+                                            style="width:150px;height: 150px;"> 
+                                    <p class="bg-dark text-white" style="opacity: 0.5;">John Parry</p>
+                                </div> 
+                            </div> 
+                              
+                            <div class="card-back"> 
+                                <h3>John Parry</h3> <br><br>
+                                <a type="email" href="john@gmail.com" class="text-white"><i class="fa fa-envelope-o"></i>john@gmail.com</a> 
+                                <a type="tel"><i class="fa fa-phone" aria-hidden="true"></i>247-972-2751</a><br><br>
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+        </div>      
+    </section>
+
+    <!--Table data-->
+    <section id="Table">
+        <div class="p-5 pt-2 pb-2">
+            <h3>Contacts (Table View)</h3>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><img class="rounded-circle" style="width: 35px;height: 35px;" src="avatar2.png" alt=""></th>
+                    <td>Peter Parker</td>
+                    <td>peter@gmail.com</td>
+                    <td>547-165-2403</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><img class="rounded-circle" style="width: 35px;height: 35px;" src="avatar1.png" alt=""></th>
+                    <td>James Cameron</td>
+                    <td>james@gmail.com</td>
+                    <td>247-525-2523</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><img class="rounded-circle" style="width: 35px;height: 35px;" src="avatar3.png" alt=""></th>
+                    <td>Maria Hili</td>
+                    <td>maria@gmail.com</td>
+                    <td>647-395-7673</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><img class="rounded-circle" style="width: 35px;height: 35px;" src="avatar4.jpg" alt=""></th>
+                    <td>John Parry</td>
+                    <td>john@gmail.com</td>
+                    <td>247-972-2751</td>
+                  </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!--Ending section-->
+    <section id="endform">
+        <div class="col-lg bg-dark text-white mb-0" style="text-align: center;">Copyright ContactManager <i class="fa fa-copyright"></i> 2020</div>
+        <div class="col-lg bg-dark p-2 pt-0 d-flex">
+            <div class="firstpart p-2 text-white" style="text-align: justify;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit atque nesciunt omnis mollitia expedita quia modi? Maxime animi magni ad excepturi quia placeat eligendi quo velit earum quis, expedita aspernatur, ut, consectetur quam omnis voluptatem quos soluta facilis accusantium consequatur modi perferendis. Earum dicta reprehenderit porro, cupiditate ea debitis cumque?
+            </div>
+            <div class="firstpart p-2 text-white" style="text-align: justify;">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit atque nesciunt omnis mollitia expedita quia modi? Maxime animi magni ad excepturi quia placeat eligendi quo velit earum quis, expedita aspernatur, ut, consectetur quam omnis voluptatem quos soluta facilis accusantium consequatur modi perferendis. Earum dicta reprehenderit porro, cupiditate ea debitis cumque?
+            </div>
+            <div class="firstpart p-2 text-white" style="text-align: justify;">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatem eius ex vero, nemo quaerat consequuntur, maiores veniam odit dignissimos, vitae debitis distinctio labore repellat laborum corrupti! Eius aspernatur corporis, harum deleniti incidunt vel dolores quo ratione recusandae reprehenderit quis ducimus laborum, in architecto nobis maiores possimus, amet vitae quia?
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

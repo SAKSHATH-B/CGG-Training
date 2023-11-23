@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-// import UseStateArray from "./Components/UseStateArray";
+import UseStateArray from "./Components/UseStateArray";
 // import { UseStateObject } from "./Components/UseStateObject";
 // import { UseStateCounter } from "./Components/UseStateCounter";
 import { UseEffectCounter } from "./Components/UseEffectCounter";
@@ -22,6 +22,8 @@ import { UseRefHook } from "./Components/UseRefHook";
 import { CustomHooks } from "./Components/CustomHooks/CustomHooks";
 import { Chall } from "./Components/CustomHooks/Chall";
 import Navbar from "./Components/ContextAPI/Navbar";
+import { ReducerBasics } from "./Components/useReducer/ReducerBasics";
+import { Memo } from "./Components/Performance/Memo";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -54,7 +56,9 @@ function App() {
       {/* <UseRefHook /> */}
       {/* <CustomHooks /> */}
       {/* <Chall /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      {/* <ReducerBasics /> */}
+      <Memo />
     </>
   );
 }

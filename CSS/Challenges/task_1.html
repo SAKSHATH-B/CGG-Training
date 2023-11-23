@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Pixelify+Sans&family=Teko:wght@300&display=swap" rel="stylesheet">
+    <style>
+        html{
+            font-family: 'karla', sans-serif;
+            
+        }
+        .poster{
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: 3px 3px 7px 1px rgba(0,0,0,0.75);
+            /* overflow: hidden; */
+            margin: 100px;
+            margin-top: 20px;
+        }
+        .up{
+            padding: 30px;
+            padding-left: 40px;
+            /* width: 100%; */
+            
+        }
+        h2{
+            font-weight: 700;
+            color: hsl(179, 62%, 43%);
+            margin-bottom: 30px;
+        }
+        h3{
+            font-weight: 700;
+            color: hsl(71, 73%, 54%);
+        }
+        .up p{
+            
+            opacity: 0.7;
+        }
+        .lower{
+            display: inline-block;
+            width: 100%;
+        }
+        h4{
+            color: white;
+            margin-bottom: 0;
+        }
+        .lowerleft,.lowerright{
+            width:100%;
+            padding: 30px;
+            padding-left: 40px;
+            display: inline-block;
+            
+            
+        }
+        .lowerleft{
+            background-color: hsl(179, 62%, 43%);
+        }
+        
+        .lowerright{
+            background-color: hsl(179, 62%, 43%, 0.8);
+        }
+        .price{
+            
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .permonth{
+            
+            margin: 10px;
+            color: white;
+            opacity: 0.6;
+        }
+        button{
+            background-color: hsl(71, 73%, 54%);
+            width: 240px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        button:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        ul{
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li{
+            color: white;
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+        @media (min-width:576px){
+            .card{
+                width: 700px;
+                height:400px;
+            }
+            .lowerleft,.lowerright{
+                width: 50%;
+                vertical-align: top;
+                display: inline-block;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="up">
+            <h2>Join our Community</h2>
+            <h3>30-day,hassle-free money back guarantee</h3>
+            <p>Gain access to our full library of tutorials along with expert code reviews.</p>
+            <p>Perfect for any developers who are serious about honing their skills.</p>
+        </div>
+        <div class="lower">
+            <div class="lowerleft">
+                <h4>Monthly Subscription</h4>
+
+                <div class="price">
+                    <div>
+                        <h1 style="font-size: 40px;">$29</h1>
+                    </div>
+                    <div class="permonth">
+                        <p>per month</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 0; color: white;">Full access for less than $1 a day</p>
+
+                <button>Sign Up</button>
+            </div>
+            <div class="lowerright">
+                <h4>Why us</h4>
+
+                <ul>
+                    <li>Tutorials by industry experts</li>
+                    <li>Peer & expert code review</li>
+                    <li>Coding exercises</li>
+                    <li>Access to our GitHub repos</li>
+                    <li>Community forum</li>
+                    <li>Flashcard decks</li>
+                    <li>New videos every week</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

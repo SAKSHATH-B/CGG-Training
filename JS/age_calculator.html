@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="cardbody text-center">
+                    <div class="title">
+                        <h1>Age Calculator</h1>
+                        <p>Enter your date of birth</p>
+                    </div>
+                    <div class="body row">
+                        <div class="form-group col-4">
+                            <input type="text" id="day" class="form-control" placeholder="Day">
+                        </div>
+                        <div class="form-group col-4">
+                            <select name="month" id="month" class="form-control">
+                                <option value="Month" selected disabled>Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-4">
+                            <input type="text" id="year" class="form-control" placeholder="Year">
+                        </div>
+                    </div>
+                    <div class="end">
+                        <button class="btn btn-dark mt-3" onclick="calcAge()">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        let calcAge = ()=>{
+            let days = document.getElementById('day').value
+            let months = document.getElementById('month').value
+            let years = document.getElementById('year').value
+
+            if(days>31){
+                alert('Invalid date')
+                return
+            }
+            
+            let d = new Date(`${days} ${months} ${years}`)
+            let n = new Date()
+            // console.log(n)
+            // console.log(d)
+
+            let ageDiff = (n-d)
+            let no_of_days = Math.floor(ageDiff/(1000*60*60*24))
+            let no_of_years = Math.floor(ageDiff/(1000*60*60*24)/365)
+            console.log(no_of_days)
+
+            alert(`Your age in days is ${no_of_days}
+Your age in years is ${no_of_years}`)
+        }
+    </script>
+</body>
+</html>

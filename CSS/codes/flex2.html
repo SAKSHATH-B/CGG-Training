@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Properties</title>
+    <style>
+        .container{
+            width: 600px;
+            min-height: 600px;
+            display: flex;
+            border: 2px solid black;
+            /* flex-wrap:wrap; */
+            justify-content: start;
+            /* align-items: center; */
+            /* align-content: end;  */  
+        }
+        .flex-item{
+            margin: 0;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            /* margin: 10px; */
+
+        }
+        .item1{
+            /* flex-grow: 1; */
+            flex-basis: 15%;
+            align-self: baseline;
+        }
+        .item2{
+            flex-grow: 1;
+            flex-basis: 25%;
+            /* flex-grow: 1; */
+            align-self: flex-end;
+        }
+        .item3{
+            flex-basis: 25%;
+            /* flex-grow: 1; */
+            align-self: center;
+        }
+        .item4{
+            flex-basis: 25%;
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-item item1" style="order: 3;">1</div>
+        <div class="flex-item item2">2</div>
+        <div class="flex-item item3">3</div>
+        <div class="flex-item item4">4</div>
+        <!-- <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+        <div class="flex-item">7</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">8</div>
+        <div class="flex-item">8</div> -->
+    </div>
+</body>
+</html>

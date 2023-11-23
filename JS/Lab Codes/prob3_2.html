@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<body>
+    <script>
+        let name,search
+
+        let func = (name,search)=>{
+            // console.log(name)
+            // console.log(search)
+            
+            let x=name.indexOf(search)
+
+            document.write(`The Actual String is - ${name}<br>`)
+            document.write(`The Character to be searched for is - ${search}<br>`)
+            
+            return x
+        }
+        
+        document.write(`The Character is found at the index - ${func('Capgemini','p')}<br>`)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Payment Calculator</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Loan Payment Calculator</h1>
+
+    <label for="loanAmount">Amount of Loan (INR):</label>
+    <input type="text" id="loanAmount" /><br />
+    <span class="error" id="loanAmountError"></span><br />
+
+    <label for="rateOfInterest">Annual Percentage Rate of Interest:</label>
+    <input type="text" id="roi" /><br />
+    <span class="error" id="roiError"></span><br />
+
+    <label for="repaymentPeriod">Repayment Period (Years):</label>
+    <input type="text" id="repaymentPeriod" /><br />
+    <span class="error" id="repaymentPeriodError"></span><br />
+
+    <button onclick="calculatePayment()">Compute</button>
+
+    <h2>Payment Information</h2>
+
+    <label for="monthlyPayment">Monthly Payment (INR):</label>
+    <input type="text" id="monthlyPayment" readonly /><br />
+
+    <label for="totalPayment">Total Payment (INR):</label>
+    <input type="text" id="totalPayment" readonly /><br />
+
+    <label for="totalInterest">Total Interest Payment (INR):</label>
+    <input type="text" id="totalInterest" readonly />
+
+    <script>
+      function calculatePayment() {
+        // Get loan amount and repayment period
+        const loanAmount = document.getElementById("loanAmount").value;
+        const rateOfInterest = document.getElementById("roi").value;
+        const repaymentPeriod =
+          document.getElementById("repaymentPeriod").value;
+
+        // Validation: Check if loan amount is less than or equal to 15 lakhs
+        if (loanAmount > 1500000) {
+          document.getElementById("loanAmountError").textContent =
+            "Loan amount cannot exceed 15 lakhs";
+          return;
+        }
+
+        // Validation: Check if repayment period is between 7 and 15 years
+        if (repaymentPeriod < 7 || repaymentPeriod > 15) {
+          document.getElementById("repaymentPeriodError").textContent =
+            "Repayment period should be between 7 and 15 years";
+          return;
+        }
+
+        // Clear any previous error messages
+        document.getElementById("loanAmountError").textContent = "";
+        document.getElementById("repaymentPeriodError").textContent = "";
+
+        // Calculate Monthly Payment, Total Payment, and Total Interest Payment
+        const monthlyInterestRate = document.getElementById("roi").value / 1000; //0.005; Assuming 5% annual interest rate
+        const n = repaymentPeriod * 12; // Total number of payments
+        const monthlyPayment =
+          (loanAmount * monthlyInterestRate) /
+          (1 - Math.pow(1 + monthlyInterestRate, -n));
+        const totalPayment = monthlyPayment * n;
+        const totalInterest = totalPayment - loanAmount;
+
+        // Display the calculated values
+        document.getElementById("monthlyPayment").value =
+          monthlyPayment.toFixed(2);
+        document.getElementById("totalPayment").value = totalPayment.toFixed(2);
+        document.getElementById("totalInterest").value =
+          totalInterest.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

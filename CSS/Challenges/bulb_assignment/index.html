@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Sample
+    </title>
+    <style>
+        img{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bulb Experiment</h1>
+
+    <button id="onbulb" onclick="On()">TURN ON</button>
+    <button id="offbulb" onclick="Off()">TURN OFF</button>
+    <button id="defa" onclick="defa()">ON</button>
+
+    <div><img id="imga" onclick="defa()" src="OFFbulb.jpg" alt="On"></div>
+
+    <script>
+        const On = ()=>{
+            let On1 = document.getElementById('imga')
+            On1.setAttribute('src','ONbulb.jpg')
+            let butdef = document.getElementById('defa')
+            butdef.innerHTML = 'OFF'
+        }
+        const Off = ()=>{
+            let Off1 = document.getElementById('imga')
+            Off1.setAttribute('src','OFFbulb.jpg')
+            let butdef = document.getElementById('defa')
+            butdef.innerHTML = 'ON'
+        }
+        const defa = ()=>{
+            let def1 = document.getElementById('imga')
+            let src1 = def1.getAttribute('src')
+            let butdef = document.getElementById('defa')
+
+            if(src1 == 'ONbulb.jpg'){
+                Off()
+                butdef.innerHTML = 'ON'
+            }
+            else{
+                On()
+                butdef.innerHTML = 'OFF'
+            }
+        }
+    </script>
+</body>
+</html>

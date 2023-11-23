@@ -1,0 +1,54 @@
+git config --list
+
+git log -p -2 or git log -1  --//Gives only the last two commits done recently
+
+git log --stat      --  //Gives stats of log
+
+git add -A  -- //Add all files to the staged area
+
+git checkout Filename.ext    -- //Restores all the modified data in a file
+
+git diff Filename.ext   -- //Comparing the previous version of file with new version with changes
+
+git diff --staged or --cached  -- //Tracks all the changes in staged area
+
+git diff HEAD~1
+
+git diff 17faa80d02a5290ba3be3b541305296fd3d93b8e 6433e676e10811369a376b5967b683a3ad1bce39  --//Tracks changes between two commits
+
+git rm filename.ext
+
+git rm --cached Filename.ext    --//removes file from staged area
+
+git rm -f Filename.ext     --//remove file from working directory and we have to commit the changes
+
+Difference between fork and cloning.(while commiting)
+
+git fetch(remote -> local repo) + git merge(localrep -> working Directory)  or git pull(remote -> local working directory)
+
+whenever we add remote origin address to local repo then the name of the branch is by default (master) but when we create a new repo in remote location the branch name is by default (main) so we rename the master branch to main by 
+git branch -M main
+
+git push -u origin main  -- //-u means we set an upstream method default to origin main and after set we directly call "git push" whenever we want to push.
+
+git branch      --  to check the branch
+git branch -M main      --  to rename the branch
+git checkout <branch name>  --  to navigate to the branch
+git checkout -b <branch name>   --  to create new branch
+git branch -D <branch name>     --  force delete the branch
+
+git remote -v   --  Describes about the remote origin path
+
+** if we created a file in one branch and modified it and committed it to that branch and if we checkout to second branch the changes will not be visible to second branch.If we want our committed changes to be visible to our first branch we should merge first branch with second one with command
+git merge <second branch name>      --  it will be done in the remote repo
+and if we want the same changes in local repo also we need to pull the main to local repo with
+git pull origin main
+//(if the same file contains in two branches)
+
+if we fork can we able to pull??    --  (NO) first it will successfully pull the files to local repo and if we delete it in local repo we can't be able to pull it again.
+if we want to pull the files we have to follow two commands
+git fetch --all     --  //updates all the files in repo
+git reset --hard origin/main    --  //pulls the files in local repo
+
+MERGE CONFLICTS -- execute 3 way merge
+

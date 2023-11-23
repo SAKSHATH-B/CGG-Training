@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Getter and Setter, Constructor</title>
+</head>
+<body>
+    <h1>Object Getter and Setter, Constructor</h1>
+    <script>
+        const emp = {
+            name:'abs',
+            company:'CGG',
+            city:'hyd',
+
+        get getName(){
+            return this.name.toUpperCase()
+        },
+
+        get getCompany(){
+            return this.college
+        },
+
+        get getCity(){
+            return city
+        },
+
+        set setName(name){
+            console.log('setting value to name')
+            if(name==''){
+                alert('not going to set')
+            }
+            this.name = name
+        },
+
+        set setCompany(company){
+            console.log('setting value to company')
+            this.company = company
+        },
+
+        set setCity(city){
+            console.log('setting value to city')
+            this.city = city
+        },
+
+        display:function(){
+            return ``
+        }
+
+    }
+
+
+
+        //going to change name
+        emp.setName = 'pqr'
+        console.log(emp.display())
+        console.log(emp.getName);
+
+        // emp.setName = ''
+
+        //constructor
+        //first we will create a blueprint
+        function Person(id,phone,age){
+            this.personId = id,
+            this.personPhone = phone,
+            this.personAge = age,
+            this.display = function(){
+                return `${this.personId} : ${this.personPhone} : ${this.personAge}`
+            }
+        }
+
+        let p1 = new Person(12,1234,45)
+        console.log(p1.display());
+        let p2 = new Person(45,12,23)
+        console.log(p2.display());
+
+    </script>
+</body>
+</html>

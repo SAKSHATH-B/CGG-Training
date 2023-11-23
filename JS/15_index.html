@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get and Set Attributes</title>
+</head>
+<body>
+    <a id="url" class="alert alert-danger" href="https://www.google.com">Google</a>
+
+    <button onclick="getAtt()">Get</button>
+    <button onclick="setAtt()">Set</button>
+    <button onclick="remove()">remove</button>
+
+
+    <script>
+        const getAtt = ()=>{
+            //get the attribute
+            let urlobj = document.getElementById('url')
+            let h = urlobj.getAttribute('href')
+            console.log(h)
+            console.log(urlobj.getAttribute('id'))
+            console.log(urlobj.getAttribute('class'))
+        }
+
+        const setAtt = ()=>{
+            //set the attribute
+            let urlobj = document.getElementById('url')
+            urlobj.innerHTML = 'Instagram'
+            urlobj.setAttribute('href','https://instagram.com')
+        }
+
+        //removeAttribute
+        const remove = ()=>{
+            let urlobj = document.getElementById('url')
+            urlobj.removeAttribute('class')
+            
+        }
+    </script>
+</body>
+</html>

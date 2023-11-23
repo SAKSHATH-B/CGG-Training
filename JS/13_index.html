@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+
+</head>
+<body>
+    <h1>DOM Selectors</h1>
+    <h2 id="banner">Centre for Good Governance</h2>
+    <h1 class="myclass">HelloWorld</h1>
+    <h1 class="myclass">HelloWorld</h1>
+    <h1 class="myclass">HelloWorld</h1>
+
+    <script>
+        let ti = document.title
+        console.log(ti)
+        let doc = document.documentElement
+        console.log(doc)
+        let hd = document.head
+        console.log(hd)
+        let bd = document.body
+        console.log(bd)
+        
+
+        //accessing elements by ID
+        //getElementById() - returns single element
+
+        let h2 = document.getElementById('banner')
+        console.log(h2)
+        //change the text
+        h2.innerHTML='CGG Gachibowli'
+        h2.style.color = 'red'
+        h2.style.backgroundColor = 'orange'
+        
+        //selecting elements by class name
+        //getElementsByClassName(className)
+        let cl = document.getElementsByClassName('myclass')
+        console.log(cl)
+        for(el of cl){
+            console.log(el)
+            el.style.color='white'
+            el.style.backgroundColor='blue'
+        }
+
+        //use for..in loop also
+        // for(el of cl){
+        //     console.log(el)
+        //     el.style.color='white'
+        //     el.style.backgroundColor='blue'
+        // }
+
+        //selecting elements with tagname
+
+        //selecting elements with the  help of css selectors
+        //queryselectors() - single element
+        //queryselectorall() - list of elements
+
+        let els = document.querySelectorAll('.myclass')
+        console.log(els)
+        for(let e of els){
+            console.log(e)
+            e.style.color='black'
+        }
+
+    </script>
+</body>
+</html>

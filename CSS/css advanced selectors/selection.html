@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Element Selectors</title>
+    <style>
+        body{
+            font:19px/25px arial 10px 0 0 20px;
+        }
+        h1{
+            font-size: 29px;
+            margin-bottom: 35px;
+
+        }
+       p::selection{
+        background-color: pink;
+        color:#fff;
+       } 
+       * ::selection{
+        background-color: red;
+        color:#fff;
+       } 
+       /* h1::selection{
+        background-color: red;
+        color:#fff;
+       } 
+       p::selection{
+        background-color:green;
+        color:#fff;
+       }  */
+    </style>
+</head>
+<body>
+    <h1>CSS Pseudo Element Selectors</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptatibus numquam delectus rerum voluptas, quod consequuntur esse libero porro iste totam animi illo unde distinctio nesciunt? Iste ipsam quasi ut saepe perspiciatis, incidunt, adipisci aspernatur non eius, hic provident ea.</p>
+    <ul>
+        <li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem perspiciatis accusamus fuga nostrum similique nihil recusandae, optio ducimus facere quia illo laboriosam iusto eaque asperiores enim maxime quas, ab ad.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem perspiciatis accusamus fuga nostrum similique nihil recusandae, optio ducimus facere quia illo laboriosam iusto eaque asperiores enim maxime quas, ab ad.</p>
+        </li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem ipsum dolor sit.</li>
+      </ul>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero totam alias ad mollitia facilis possimus minus, odit deleniti molestiae sunt aperiam laboriosam culpa aut, aspernatur at voluptatibus et eaque nam, ea eius accusantium! Qui repellat quam eligendi voluptates similique neque?</p>
+    </body>
+</html>

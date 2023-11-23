@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Document Object Model</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th colspan="4">Create a new window</th></tr>
+        <tr><td colspan="4" style="text-align: center;">Window Size</td></tr>
+        <tr>
+            <td>Width:</td>
+            <td><input type="text" id="wdt"></td>
+            <td>Height:</td>
+            <td><input type="text" id="hgt"></td>
+        </tr>
+        <tr><td colspan="4" style="text-align: center;">POSITION</td></tr>
+        <tr>
+            <td>Left:</td>
+            <td><input type="text" id="lft"></td>
+            <td>Top:</td>
+            <td><input type="text" id="tp"></td>
+        </tr>
+        <tr>
+            <th colspan="3" ><button id="nw" onclick="wind()">New Window</button></th>
+            <th><button type="reset" id="rst" onclick="clr()">Reset</button></th>
+        </tr>
+    </table>
+
+    <script>
+        function clr(){
+            document.getElementById("wdt").value = ""
+            document.getElementById("hgt").value = ""
+            document.getElementById("lft").value = ""
+            document.getElementById("tp").value = ""
+        }
+
+        function wind(){
+            let WIDTH = document.getElementById("wdt").value
+            let HEIGHT = document.getElementById("hgt").value
+            let LEFT = document.getElementById("lft").value
+            let TOP = document.getElementById("tp").value
+            let cont = window.open('','_blank',`width=${WIDTH},height=${HEIGHT},top=${TOP},left=${LEFT}`)
+            cont.document.write('This window is opened on clicking of the New Window button')
+            
+        }
+    </script>
+</body>
+</html>

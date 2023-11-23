@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Styling</title>
+    <style>
+        .red{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="getStyle()">Get Style</button>
+    <h2 id="main">This is First Heading</h2>
+    <h2 id="sub">This is second Heading</h2>
+    <h2 id="subsub">This is third Heading</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sapiente consequatur repellendus corrupti. Est fugiat sequi libero, debitis dolorum accusantium!</p>
+
+    <script>
+        //select the element
+        let mianobj = document.getElementById('main')
+
+        //applying style on element
+        // mianobj.style.color = 'orange'
+        // mianobj.style.fontSize = '50px'
+        // mianobj.style.border = '1px solid red'
+        // mianobj.style.padding = '20px'
+        // mianobj.style.backgroundColor = '#e2e2e2'
+
+        const changeStyle = ()=>{
+            // mianobj.style.color='blue'
+            mianobj.style.fontSize='50px'
+            mianobj.style.padding='20px'
+            mianobj.style.border='2px solid red'
+            // mianobj.style.backgroundColor='#e2e2e2'
+            
+            document.body.style.background = 'black'
+            document.body.style.color = 'white'
+            
+            //inline style provided overrides the class styles
+            console.log(main.className)
+            mianobj.className = 'red'
+
+
+        }
+
+        //get styles
+        const getStyle = ()=>{
+            console.log(mianobj.style.color)
+            console.log(main.style.border)
+            console.log(main.style.backgroundColor)
+
+            let styles = window.getComputedStyle(mianobj)
+            // console.log(styles)
+            console.log(styles.getPropertyValue('color'))
+        }
+    </script>
+</body>
+</html>

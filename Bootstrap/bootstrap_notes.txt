@@ -1,0 +1,294 @@
+<nav class="navbar">
+      hello
+</nav>
+---------------------------------------------------------------------
+<nav class="navbar">
+      <div class="container-xxl">
+        hello
+      </div>
+</nav>
+-------------------------------------------------------------------
+ <nav class="navbar">
+      <div class="container-xl">
+        <a href="#intro" class="navbar-brand">
+          <span class="fw-bold text-secondary">
+            Bootstrap Pro - the Book
+          </span>
+        </a>
+      </div>
+ </nav>
+------------------------Pricing Plan---------------------------
+ <section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+      </div>
+
+    </section>
+----------------------------------------------------------------------------
+<section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card">
+              <div class="card-body py-4 text-center">
+                hello
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+-----------------------------------------------------------------
+<section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card border-0">
+              <div class="card-body py-4 text-center">
+                hello
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+-------------------------------------------------------------
+ <section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card border-0">
+              <div class="card-body py-4 text-center">
+                <h4 class="card-title">Starter Edition</h4>
+                <p class="lead card-subtitle">eBook download only</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+--------------------------------------------------------------------------
+<section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card border-0">
+              <div class="card-body py-4 text-center">
+                <h4 class="card-title">Starter Edition</h4>
+                <p class="lead card-subtitle">eBook download only</p>
+                <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+------------------------------------------------------------------------------------
+ <section id="pricing" class="bg-light mt-5">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Pricing Plans</h2>
+          <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+        </div>
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card border-0">
+              <div class="card-body py-4 text-center">
+                <h4 class="card-title">Starter Edition</h4>
+                <p class="lead card-subtitle">eBook download only</p>
+                <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                <p class="card-text mx-5 text-muted d-none d-lg-block">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Iusto sed porro modi. Aut, est nihil. Deserunt, illum rerum
+                  asperiores beatae excepturi, architecto tempore, id dolorum
+                  optio tenetur quaerat suscipit assumenda?
+                </p>
+                <a href="#" class="btn btn-outline-primary btn-lg mt-3"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-9 col-lg-4">
+            <div class="card border-primary border-2">
+              <div class="card-header text-center text-primary">
+                Most Popular
+              </div>
+              <div class="card-body text-center py-5">
+                <h4 class="card-title">Complete Edition</h4>
+                <p class="lead card-subtitle">eBook download & all updates</p>
+                <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
+                <p class="card-text mx-5 text-muted d-none d-lg-block">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                  iure voluptatum recusandae voluptas. Fuga pariatur incidunt,
+                  quo blanditiis deleniti quod veritatis necessitatibus in, sint
+                  eos voluptate? Dicta saepe facere reprehenderit.
+                </p>
+                <a href="#" class="btn btn-outline-primary btn-lg mt-3"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-lg-4 col-xl-4">
+            <div class="card border-0">
+              <div class="card-body py-4 text-center">
+                <h4 class="card-title">Ultimate Edition</h4>
+                <p class="lead card-subtitle">download, updates & extras</p>
+                <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+                <p class="card-text mx-5 text-muted d-none d-lg-block">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Iusto sed porro modi. Aut, est nihil. Deserunt, illum rerum
+                  asperiores beatae excepturi, architecto tempore, id dolorum
+                  optio tenetur quaerat suscipit assumenda?
+                </p>
+                <a href="#" class="btn btn-outline-primary btn-lg mt-3"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+-----------------------------Topics at the glance-----------------------
+<section id="topics">
+      <div class="container-md">
+        <div class="text-center">
+          <h2>Inside the Book...</h2>
+          <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+        </div>
+      </div>
+    </section>
+--------------------------------------------------------------------
+ <section id="topics">
+      <div class="container-md">
+        <div class="text-center">
+          <h2>Inside the Book...</h2>
+          <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+        </div>
+        <div class="row my-5 g-5 justify-content-around align-items-center">
+          <div class="col-6 col-lg-4">
+            <img src="images/kindle.jfif" alt="ebook" class="img-fluid">
+          </div>
+          <!-- accordion -->
+        </div>
+      </div>
+    </section>
+------------------------------------------------------------------
+ <section id="topics">
+      <div class="container-md">
+        <div class="text-center">
+          <h2>Inside the Book...</h2>
+          <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+        </div>
+        <div class="row my-5 g-5 justify-content-around align-items-center">
+          <div class="col-6 col-lg-4">
+            <img src="images/kindle.jfif" alt="ebook" class="img-fluid">
+          </div>
+          <!-- accordion -->
+          <div class="accordion" id="chapters">
+            <div class="accordiam-item">
+              <h2 class="accordion-header" id="heading-1">
+                 <button class="accordion-button" type="button"
+                 data-bs-toggle="collapse" data-bs-target="#chapter-1"
+                 aria-expanded="true"
+                 aria-controls="chapter-1">
+                 Chapter 1 - Your First Web Page
+                </button>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+----------------------------------------------------------------------------
+ <section id="topics">
+      <div class="container-md">
+        <div class="text-center">
+          <h2>Inside the Book...</h2>
+          <p class="lead text-muted">A quick glance at the topics you'll learn</p>
+        </div>
+        <div class="row my-5 g-5 justify-content-around align-items-center">
+          <div class="col-6 col-lg-4">
+            <img src="images/kindle.jfif" alt="ebook" class="img-fluid">
+          </div>
+          <!-- accordion -->
+          <div class="accordion" id="chapters">
+            <div class="accordiam-item">
+              <h2 class="accordion-header" id="heading-1">
+                 <button class="accordion-button" type="button"
+                 data-bs-toggle="collapse" data-bs-target="#chapter-1"
+                 aria-expanded="true"
+                 aria-controls="chapter-1">
+                 Chapter 1 - Your First Web Page
+                </button>
+              </h2>
+              <div id="chapter-1" class="accordion-collapse collapse show"
+              aria-labelledby="heading-1" data-bs-parent="#chapters">
+            <div class="accordion-body">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nihil! Deleniti hic suscipit ullam nisi, dignissimos ratione. Debitis quas fugit omnis impedit natus, aspernatur, incidunt fugiat molestias magnam quidem veniam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi cumque, veritatis quam quas quasi voluptatum perspiciatis tenetur cum. Ex cum dignissimos, enim nesciunt facere rem blanditiis officiis architecto quis suscipit?</p>
+              </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+------------------------------Reviews-----------------------
+<section id="reviews" class="bg-light">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Book Reviews</h2>
+          <p class="lead">What my students have said about the book...</p>
+        </div>
+      </div>
+
+    </section>
+--------------------------------------------------------------------------
+ <section id="reviews" class="bg-light">
+      <div class="container-lg">
+        <div class="text-center">
+          <h2>Book Reviews</h2>
+          <p class="lead">What my students have said about the book...</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="list-group">
+              <div class="list-group-item py-3">
+                <h5 class="mb-1">A must buy for every aspiring web dev</h5>
+                <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, eum facilis mollitia voluptates a culpa dicta. Error cum non minus soluta voluptate illum, fuga voluptates animi deserunt mollitia cumque quam hic id aliquid numquam? Necessitatibus facere magni dolorum quae officia?</p>
+                <small>Review by ABC</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>

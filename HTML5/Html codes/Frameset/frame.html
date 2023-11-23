@@ -1,0 +1,20 @@
+<!--Dividing the Web document into three parts using frameset
+        First frameset divides the browser horizontally into two parts
+        First half contain the Top. Html page
+        Second half again gets divided vertically into two parts ‘A’ Part
+        showing the ‘left.htm’ page and ‘B’ part further get divided horizontally
+        into two parts x part showing the ‘main.htm’ and y part showing ‘blank ’ -->
+        <FRAMESET rows=10%,*>
+            <FRAME  name=top src="top.htm" noResize
+            scrolling=no>
+            <FRAMESET cols=20%,*>
+                <FRAME name=left src="left.htm">
+                <FRAMESET rows=70%,*>
+                    <FRAMESET cols=50%,*>
+                        <FRAME name=hello src="about:blank">
+                        <FRAME name=hello2 src="about:blank">
+                    </FRAMESET>
+                    <FRAME name=main src="main.htm">
+                </FRAMESET>
+            </FRAMESET>
+        </FRAMESET>

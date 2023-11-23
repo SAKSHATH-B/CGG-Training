@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Navigation</title>
+</head>
+<body>
+    <h1>DOM Navigation</h1>
+    <div id="container">
+        <h1 id="title">We are Learning Javascript</h1>
+        <p id="content">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia doloribus excepturi id vel ducimus nesciunt ad voluptates amet, adipisci itaque!</span>
+        </p>
+        <h2>This is the last child</h2>
+    </div>
+    <button onclick="btnClicked()">Click me for magic</button>
+    <script>
+        function btnClicked(){
+            let containerobj = document.getElementById('container')
+            // console.log(containerobj)
+            // console.log(containerobj.firstChild.nodeName)
+            // console.log(containerobj.firstElementChild.nodeName)
+
+            let firstChild = containerobj.firstElementChild
+            console.log(firstChild)
+            firstChild.innerHTML = 'Hi is changed to JS'
+
+            //access last child
+            let lastChild = containerobj.lastElementChild
+            lastChild.style.color = 'orange'
+            lastChild.style.backgroundColor = 'black'
+
+            //all children
+            let nodes = containerobj.childNodes
+            console.log(nodes)
+            for(let n of nodes){
+                console.log(n.nodeName)
+            }
+
+            let newnodes = containerobj.children
+            console.log(newnodes)
+
+            //parent node
+            let parentNode = containerobj.parentNode
+            console.log(parentNode.nodeName)
+
+            //previous and next sibling
+            let titleObj = document.getElementById('title')
+            let nextS = titleObj.nextSibling
+            console.log(nextS.nodeName)
+            let nextSi = titleObj.nextElementSibling
+            console.log(nextSi.nodeName)
+            console.log(nextSi.nextElementSibling.nodeName)
+        }
+    </script>
+</body>
+</html>

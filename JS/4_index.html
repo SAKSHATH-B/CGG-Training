@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in JS</title>
+</head>
+<body>
+    <h1>Strings in Javascript</h1>
+    <script>
+        //first way of creatng a string
+        let a = 'Hello'
+        console.log(a)
+        console.log(typeof a)
+
+        //second way by using string constructor -- it becomes a object in the output
+        let b = new String('Dinnu')
+        console.log(b)
+        console.log(typeof b)
+
+        let c = 'man'
+        let d = "how"
+        let e = `are`
+        console.log(c)
+        console.log(d)
+        console.log(e)
+
+        let f = `you
+                are 
+                    good
+                enough
+                man`
+        console.log(f)
+
+        //string interpolation
+        let x=2,y=3,z=x+y
+        //output -- sum of 2 and 3 is 5
+        console.log("sum of "+x+" and "+y+" is "+z)
+        console.log(`sum of ${x} and ${y} is ${z}`)
+        console.log(`sum of ${x} and ${y} is ${z+5}`)
+    </script>
+</body>
+</html>

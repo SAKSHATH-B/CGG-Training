@@ -1,0 +1,23 @@
+ .container{
+    border:5px solid black;
+}
+
+/*.nav{
+    background-color: darkcyan;
+}
+
+.nav-link{
+    color:#fff;
+}
+.nav-link:hover,.nav-link.active{
+    color:white;
+    background-color: sandybrown;
+} */
+
+.nav-link{
+    color:#000;
+}
+.nav-link:hover,.nav-link.active{
+    color:white;
+    background-color: sandybrown;
+}

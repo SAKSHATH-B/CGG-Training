@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Event Handling</title>
+</head>
+<body>
+    <h1>Events and Event Handling in Javascript</h1>
+    <button onclick="alert('This is click event')">Click me</button>
+    <button onclick="my_fun()">Click me</button>
+    <input type="text" onfocus="change_color()" id="field" onkeyup="update_next()">
+    <h1 id="heading">This is dummy text</h1>
+
+    <form onsubmit="form_submit(event)" action="test_20.html">
+        <button type="submit">Submit</button>
+    </form>
+    <button id="go_live_btn">Go Live</button>
+    <button id="remove_event">Remove</button>
+
+    <script>
+        const my_fun = ()=>alert('This code is from function')
+        const change_color = ()=>document.getElementById('field').style.backgroundColor='#e2e2e2'
+        const update_next = ()=>{
+            let data = document.getElementById('field').value
+            document.getElementById('heading').innerHTML = data
+        }
+
+        const form_submit = e=>{
+            console.log(e)
+            e.preventDefault()
+        }
+        
+        let golivebtnobj = document.querySelector('#go_live_btn')
+        //addEventListener
+        // golivebtnobj.addEventListener('click',()=>alert('You are Live Now'))
+        
+        // golivebtnobj.addEventListener('click',()=>{
+        //     document.body.style.backgroundColor = 'black'
+        //     document.body.style.color = 'white'
+        // })
+        
+        function addd(){
+            golivebtnobj.style.backgroundColor = 'green'
+        }
+        function rem(){
+            golivebtnobj.removeEventListener('mouseover',addd)
+        }
+        
+        //remove event listener
+        
+        golivebtnobj.addEventListener('mouseover',addd)
+
+        let dispose = document.getElementById('remove_event')
+        dispose.addEventListener('mouseover',rem)
+        
+    </script>
+</body>
+</html>

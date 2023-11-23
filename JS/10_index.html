@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <h1>Learning Functions in JS</h1>
+    <script>
+        //functions
+        //create a function
+        function hello(){
+            console.log('Hello, ')
+            console.log('How are you doing?')
+            console.log('Bro')
+        }
+        hello()
+
+        //function with arguments and return type
+        function sumNum(a,b){
+            let c=a+b
+            return c
+        }
+        console.log(`The sum of two numbers is ${sumNum(2,3)}`)
+        console.log(`The sum of two numbers is ${sumNum(2)}`)
+
+
+        //arrow functions
+        function toCelcius(farenheit){
+            let result = 5/9*(farenheit-32)
+            return result
+        }
+        console.log(toCelcius(102))
+
+        //variable name becomes the name of the function
+        const toCel = faren=>{
+            let res = 5/9*(faren-32)
+            return res
+        }
+        let c = toCel(120)
+        console.log(c)
+
+        const celcius = far=>5/9*(far-32)
+        console.log(celcius(45))
+    </script>
+</body>
+</html>

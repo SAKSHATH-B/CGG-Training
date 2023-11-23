@@ -1,0 +1,39 @@
+1.Color& Background color 
+2.Basic Selectors
+3.Border Tutorial
+4.Outline Tutorial
+5.Padding Tutorial
+6.Margin 
+7.Height & Width
+8.Min-Height & Max-Height
+9.Min-Width & Max-Width
+10.Box-Sizing
+11.Overflow
+12.Border-Radius
+13.Box-Shadow
+14.Float 
+15.Clear
+16.Font(Google Fonts)
+17.Text-Formatting
+18.Text-Decoration
+19.Word-Wrap & Word-Break
+20.Text-Shadow
+21.White-Space
+22.Text-Overflow
+23.Writing-mode
+24.units(pixels,rem,em,vw,vh,percentage)
+25.Display(inline,block,inline-block)
+26.Background Images	
+27.colors
+28.position(static,fixed,absolute,relative,sticky)
+29.opacity and rgba
+30.media queries(mobile approach,desktop approach)
+
+1.advanced selectors
+2.gradient
+3.transitions
+4.transforms
+5.pseudo elements and classes
+6.flex boxes
+7.table properties
+

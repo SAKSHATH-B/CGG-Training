@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1>Dom Manipulation</h1>
+    <div id="main">
+        <!--before-->
+        <h1 id="title">Hello World!</h1>
+        <p id="hint">This is a simple paragargh</p>
+        <!--div element-->
+    </div>
+    <button onclick="addNode()">Add Node</button>
+    <script>
+        //adding node function
+        function addNode(){
+            console.log('adding node')
+            //creating node
+            let divElement = document.createElement('div')
+            // console.log(divElement)
+
+            //create a text node
+            let textElement = document.createTextNode('wow this is magic')
+            let textElement1 = document.createTextNode('JS is good')
+
+            //adding text node to divElement
+            divElement.appendChild(textElement)
+            divElement.appendChild(textElement1)
+            console.log(divElement)
+
+            //adding it to the mainElement
+            let mainElement = document.getElementById('main')
+            mainElement.appendChild(divElement)
+
+            let titleElement = document.getElementById('title')
+            mainElement.insertBefore(divElement,titleElement)
+
+            titleElement.innerHTML = 'Hey Javascript'
+
+            mainElement.removeChild(titleElement)
+
+            //replace child
+            let h2Element = document.createElement('h2')
+            let newh2Element = document.createTextNode('This is h2 replacing')
+            h2Element.appendChild(newh2Element)
+            console.log(h2Element)
+
+            let pElement = document.getElementById('hint')
+            mainElement.replaceChild(h2Element,pElement)
+        }
+    </script>
+</body>
+</html>

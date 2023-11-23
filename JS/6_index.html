@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<body>
+    <h1>String Operations</h1>
+    <script>
+        //1.check equality of two strings
+        //==,===
+        //using literals
+        let str1='Javascript'
+        let str2='Javascript'
+        console.log(str1==str2)
+        console.log(str1)
+        console.log(str2)
+        if(str1==str2){
+            console.log('Both the strings are equal')
+        }
+
+        //ex. creating a string in another way
+        let str3 = new String('Javascript')
+        let str4 = new String('Javascript')
+        console.log(str3)
+        console.log(str4)
+        console.log(str3==str4)
+
+        //2. comparing two strings
+        let s1 = 'A', s2 = 'B'
+        //exact matching - 0
+        //s1<s2 - -ve
+        //s1>s2 - +ve
+        let result = s1.localeCompare(s2)
+        console.log(result)
+
+        //3. replace certain word with another word
+        let old = 'Hello I am good to see you'
+        let newstr = old.replace('I','You')
+        console.log(old)
+        console.log(newstr)
+
+        //4. accessing characters
+        console.log(old.charAt(6))
+        console.log(old[2])
+
+        console.log(old.charAt(96))
+        console.log(old[92])
+
+        
+
+    </script>
+</body>
+</html>

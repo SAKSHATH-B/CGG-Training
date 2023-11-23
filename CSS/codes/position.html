@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        h4{
+            margin: 0;
+            padding-left: 30px;
+            line-height: 30px;
+            width: 100vw;
+            
+        }
+        nav{
+            background-color: brown;
+            color: white; 
+            height: 30px;
+            position: fixed;  
+            top: 0;
+            z-index: 1;
+        }
+        .boxes{
+            margin-top: 50px;
+            
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin: 20px;
+        }
+        .rel-position{
+            position: relative;
+            /* top: 10px;     */
+        }
+        .abs-position{
+            position: absolute;
+            background-color: orange;
+            width: 30px;
+            height: 30px;
+            top: 10px;
+            right: 2px;
+            /* z-index: 2; */
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <h4>This is navbar text</h4>
+    </nav>
+    <div class="boxes">
+        <div class="box rel-position">
+            <div class="abs-position"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

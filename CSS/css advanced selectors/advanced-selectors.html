@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #box{
+            border:2px solid #000;
+            padding:10px;
+        }
+        /* p{
+            color:red;
+        } */
+        #box p{
+            color:red;
+        }
+         span{
+            color:green;
+        }
+        div p span{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Descendant Selectors</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis voluptatibus labore officiis voluptate dolorum minima inventore nostrum ad quisquam accusamus eos fuga, deleniti assumenda, quis sed. Dolores eveniet tempora minus totam, nisi laboriosam corrupti, dolor velit officiis libero blanditiis modi ipsa ratione nobis aperiam dolorum est, inventore eligendi debitis? Quod minus, eius atque deserunt sequi quasi fugiat veritatis laudantium illo sunt suscipit eaque impedit aspernatur maxime maiores corrupti, quam harum. Error debitis, repellendus sint eveniet recusandae omnis dolore veniam et ab maxime ullam voluptatibus commodi temporibus! Consequatur, ex rerum unde in fuga ea, quos dignissimos, reiciendis earum cumque aliquam nisi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae maiores dolorum animi sit, tenetur ullam. Molestiae nam harum praesentium similique numquam quisquam, iste nobis quaerat vero et officia necessitatibus nostrum dignissimos consequuntur saepe perspiciatis. Quidem odio tempore, quasi veritatis distinctio aliquid vitae eaque non eum animi labore magni vel, soluta atque quia facilis iure quibusdam, omnis quis. Mollitia, voluptatum sed.</p>
+   <div id="box">
+    <span>Hello</span>
+    <p>Lorem ipsum dolor sit amet <span>consectetur, adipisicing elit</span>. Excepturi ipsa dolorum recusandae, iusto reprehenderit magni! Rerum pariatur sapiente repellendus sed!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ipsa dolorum recusandae, iusto reprehenderit magni! Rerum pariatur sapiente repellendus sed!</p>
+   </div>
+</body>
+</html>

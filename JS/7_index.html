@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+</head>
+<body>
+    <h1>Type Conversion in JS</h1>
+    <script>
+        //type conersion eg
+        let a = 12
+        console.log(typeof a)
+
+        //string convesion
+        let as = String(a)
+        console.log(as)
+        console.log(typeof as)
+
+        console.log(as.length)
+        console.log(a.length)
+
+        let ass = false
+        let asss = String(ass)
+        console.log(typeof asss)
+
+        console.log(a.toString())
+        console.log(String(false))
+
+        //numeric conversions
+        let val = '142'
+        console.log(Number(val)+1)
+
+        let val1 = '142.5'
+        console.log(Number(val1)+0.6)
+
+        //using parseInt and parseFloat
+        let val2 = parseInt(val)
+        console.log(val2)
+        console.log(typeof val2)
+        console.log(parseFloat(val1))
+
+        //undefined - NaN
+        //null - 0
+        //true - 1
+        //false - 0
+        console.log(Number(true))
+        console.log(Number(false))
+        console.log(Number(undefined))
+        console.log(Number())
+
+        //Boolean conversion
+        //null - false
+        //0 - false
+        let e = 'false'
+        console.log(typeof e)
+        let ex = Boolean(e)
+        console.log(typeof ex)
+        console.log(ex)
+        //number to boolean
+        let ea = 1
+        console.log(typeof ea)
+        let eax = Boolean(ea)
+        console.log(typeof eax)
+        console.log(eax)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <h1>Common array Operations in JS</h1>
+    <script>
+        //array operations
+        //.create
+        let p = [12,21,23]
+        console.log(p)
+        console.log(p.length)
+
+        //loops over an array
+        p.forEach(function(item,index){
+            //function body
+            console.log(`${index} => ${item}`)
+        })
+        //using arrow function ()=>{}
+        p.forEach((item,index)=>{
+            console.log(`${index} => ${item}`)
+        })
+
+        let sum=0
+        p.forEach(function(it,i){
+            sum = sum + it
+        })
+        console.log(`sum is ${sum}`)
+
+        let names = ['ska','bmw','re','gt','kia',['asd','sdu']]
+        names.push('volvo')
+        console.log(names)
+        console.log(names.pop())
+        console.log(names)
+        //remove elements from beginning
+        console.log(names.shift())
+        //add elements at front end
+        console.log(names.unshift('Audi'))
+        console.log(names)
+
+        //position of an element using indexOf
+        let a = names.indexOf('kia')
+        console.log(a)
+
+        //remove the element from any position using splice(pos,n)
+        //splice() method can be used to add elements to an array
+        //splice(pos,number of elements to be removed,rest elements to be added)
+        // console.log(names.splice(1,2))
+        console.log(names.splice(3,0,'MyCar'))
+        console.log(names)
+
+        //copy an array and returns a new array
+        //slice(pos,number of elements to copy)
+        let copy = names.slice()
+        console.log(copy)
+        // console.log(myar.slice(1,3))
+
+        //adds an element to an array at the end by calculating the length of array
+        console.log(names[names.length] = 'PORSCHE')
+        console.log(names)
+
+        //delete an elements of an array by delete keyword but it leaves a blank space at that index
+        const myar = ['hello','man','how','jsa',['asjch','kabs'],['sans','ksdb','ksjab','sajv',['asd','ajs']],'sjax']
+        delete names[2]
+        console.log(names)
+        console.log(names[2])
+        names[2] = 'bro'
+        console.log(names)
+
+        //flat method reduces the dimensionality of an array
+        let flat = myar.flat()
+        console.log(flat)
+
+        
+        //sort and reverse method of arrays
+        // let srt = names.sort()
+        // console.log(srt)
+        let rev = names.reverse()
+        console.log(rev)
+
+        const srtexp = [100,23,22,43,56,2,65]
+        // console.log(srtexp.sort())
+        console.log(srtexp.sort((a,b)=>{
+            return b-a
+        }))
+        
+
+    </script>
+</body>
+</html>

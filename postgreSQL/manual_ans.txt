@@ -1,0 +1,133 @@
+Single Row Functions    -   ANSWERS
+-----------------------------------
+
+1.select staff_name,lpad(cast(round(staff_sal) as varchar),15,'$') from staff_master;
+
+2.select student_name,to_char(student_dob,'month ,dd yyyy') from student_master
+    where extract(dow from student_dob) in (0,6);
+
+3.select staff_name,round(extract(year from age(current_date,hiredate))*12 + extract(months from age(current_date,
+hiredate)),-1) as "months_worked" from staff_master order by months_worked desc;
+
+4.select staff_name,rpad('',cast(staff_sal/1000 as int),'X') as salary from staff_master;
+
+5.select * from staff_master
+     where extract (month from hiredate) = 12 and extract (day from hiredate) between 1 and 15;
+
+6.select staff_name,staff_sal,
+    case
+    when staff_sal>=50000 then 'A'
+    when staff_sal>=25000 and staff_sal<50000 then 'B'
+    when staff_sal>=10000 and staff_sal<25000 then 'C'
+    when staff_sal<10000 then 'D'
+    end grade from staff_master;
+
+7.select staff_name,hiredate,to_char(hiredate,'day') as day from staff_master
+    order by extract(dow from hiredate);
+
+11.select student_code, student_name,
+    case
+    when dept_code=20 then 'Electricals'
+    when dept_code=30 then 'Electronics'
+    else 'others'
+    end dept_name from student_master;
+
+
+12.select student_name, coalesce(dept_code::text,'No Department') as Department from student_master;
+
+
+
+
+Joins and subqueries        --      ANSWERS
+-------------------------------------------
+
+1.select staff_name,dept_code,dept_name,staff_sal
+    from staff_master natural join department_master
+    where staff_sal>20000;
+
+2.select s.staff_code as "staff#",s.staff_name as staff,d.dept_name as Department_name,s.mgr_code as "mgr#",m.staff_name as Manager
+    from staff_master s
+    join department_master d on d.dept_code = s.dept_code
+    join staff_master m on s.mgr_code = m.staff_code;
+
+3.select s.student_code,s.student_name,d.dept_name,m.subject1,m.subject2,m.subject3
+    from student_master s
+    join department_master d on d.dept_code = s.dept_code
+    join student_marks m on s.student_code = m.student_code
+    where m.subject1>60 and m.subject2>60 and m.subject3>60 and d.dept_code in (10,20);
+
+4.select s.student_code,s.student_name,b.book_code,ab.book_name
+    from student_master s
+    join book_transactions b on b.student_code = s.student_code
+    join book_master ab on ab.book_code = b.book_code
+    where b.book_expected_return_date=current_date;
+
+5.select s.staff_code,s.staff_name,d.dept_name,de.design_name,b.book_code,b.book_name,bk.book_issue_date
+    from staff_master s
+    join department_master d on d.dept_code = s.dept_code
+    join designation_master de on de.design_code = s.design_code
+    join book_transactions bk on bk.staff_code = s.staff_code
+    join book_master b on b.book_code = bk.book_code
+    where bk.book_issue_date >= current_date - interval '30 days';
+
+6.select distinct b.book_code,bk.book_name
+    from book_transactions b
+    join book_master bk on bk.book_code = b.book_code;
+
+7.select s.staff_code,s.staff_name,de.design_name,d.dept_name,bt.book_code,bm.book_name,bm.book_pub_author,
+    case
+    when current_date > book_expected_return_date then 5*extract(day from age(current_date,book_expected_return_date))
+    else 0
+    end as fine
+    from staff_master s
+    join designation_master de on de.design_code = s.design_code
+    join department_master d on d.dept_code = s.dept_code
+    join book_transactions bt on bt.staff_code = s.staff_code
+    join book_master bm on bm.book_code = bt.book_code;
+
+12.select staff_code,staff_name,staff_sal from staff_master where staff_sal < (select avg(staff_sal) from staff_mas
+ter);
+
+
+
+
+
+Database Objects            --      ANSWERS
+-------------------------------------------
+
+5.alter table customer alter cust_name type varchar(30);
+    alter table customer rename cust_name to customername;
+    alter table customer alter customername set not null;
+
+6.a.alter table customer add gender varchar(1),add age numeric(3),add phone_no numeric(10);
+  
+  b.alter table customer rename to cust_table;
+
+7.alter table customer add constraint custid_prim primary key(customerid);
+
+8.insert into customer values(1002,'John','#114 Chicago','#114 Chicago','M',45,439525);
+ERROR:  duplicate key value violates unique constraint "custid_prim"
+DETAIL:  Key (customerid)=(1002) already exists.
+
+9.alter table customer drop constraint custid_prim;
+
+10.alter table customer add constraint custid_pkey primary key(customerid);
+ERROR:  could not create unique index "custid_pkey"
+DETAIL:  Key (customerid)=(1002) is duplicated.
+
+11.insert into customer values(1002,'Becker','#114 New York','#114 New York','M',45,431525,15000.50);
+ERROR:  INSERT has more expressions than target columns
+LINE 1: ...er','#114 New York','#114 New York','M',45,431525,15000.50);
+
+12.truncate table customer;
+
+13.alter table customer add column E_mail varchar;
+
+14.alter table customer drop column E_mail;
+
+15.alter table customer add column EmailId varchar;
+
+18.create table suppliers as
+    select customerid as suppid,customername as sname,address1 as addr1,address2 as addr2,phone_no as contactno from
+    customer;
+

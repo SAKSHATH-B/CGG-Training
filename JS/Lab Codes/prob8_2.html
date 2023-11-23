@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Order Form</title>
+    <style>
+      body {
+        background-color: lightskyblue;
+      }
+      form {
+        border: 10px solid white;
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Product Details</h1>
+
+    <form>
+      <label for="category">Category : </label>
+      <select name="category" id="category" onchange="makeProductList()">
+        <option value="" hidden>Select</option>
+        <option value="electronics">Electronics</option>
+        <option value="grocery">Grocery</option></select
+      ><br /><br />
+      <label for="product">Product : </label>
+      <select id="product">
+        <option value="" hidden>---------</option></select
+      ><br /><br />
+      <label for="quantity">Quantity : </label>
+      <input type="text" id="quantity" /><br /><br />
+      <label for="price">Total Price : </label>
+      <input type="text" id="price" readonly /><br /><br />
+
+      <button onclick="submitOrder()">Submit</button>
+      <button onclick="clear()">Clear</button>
+    </form>
+
+    <script>
+      function makeProductList() {
+        const category = document.getElementById("category").value;
+        const productList = document.getElementById("product");
+
+        productList.innerHTML = "";
+
+        if (category == "electronics") {
+          addOption(productList, "Television", 20000);
+          addOption(productList, "Laptop", 30000);
+          addOption(productList, "Phone", 10000);
+        } else if (category == "grocery") {
+          addOption(productList, "Soap", 40);
+          addOption(productList, "Powder", 90);
+        }
+      }
+
+      function addOption(selectElement, text, value) {
+        const opt = document.createElement("option");
+        opt.text = text;
+        opt.value = value;
+        selectElement.appendChild(opt);
+      }
+
+      function submitOrder() {
+        // alert("Hello");
+        const category = document.getElementById("category").value;
+        const product = document.getElementById("product").value;
+        // console.log(document.getElementById("product").selectedOptions[0].text);
+        const quantity = document.getElementById("quantity").value;
+        const total = product * quantity;
+
+        if (quantity <= 0) {
+          alert("enter valid quantity");
+          return;
+        }
+
+        const message = `Category : ${category}\nProduct : ${
+          document.getElementById("product").selectedOptions[0].text
+        }\nQuantity : ${quantity}\nTotal Price = ${total}`;
+
+        const win = window.open(
+          "",
+          "_blank",
+          "width=400,height=400,top=100,left=100"
+        );
+        win.document.write(`<h2>Order Details</h2><pre>${message}</pre>`);
+      }
+
+      function clear() {
+        document.getElementById("category").innerHTML = "";
+        document.getElementById("product").innerHTML = "";
+        document.getElementById("quantity").innerHTML = "";
+        document.getElementById("price").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

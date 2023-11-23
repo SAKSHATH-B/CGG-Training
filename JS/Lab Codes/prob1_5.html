@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedding Script tag in HTML Document</title>
+    <script>
+        let headVar = 10
+        document.write(`Script embedded in Head tag<br>----------------------------------<br>Value stored in variable <i>headVar</i> is ${headVar}<hr>`)
+    </script>
+</head>
+<body>
+    <script>
+        let bodyVar = 10
+        console.log(bodyVar)
+        document.write(`Script embedded in Body tag<br>----------------------------------<br>Value stored in variable <i>bodyVar</i> is ${bodyVar}<hr>`)
+    </script>
+    <script  src="prob1_5.js"></script>
+    <script>
+        let func = addNums(headVar,bodyVar)
+        document.write(`The sum of the variables <code>headVar</code> and <code>bodyVar</code> is ${func}`)
+    </script>
+</body>
+</html>

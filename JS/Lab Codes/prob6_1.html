@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Location Object</title>
+    
+    <style>
+        th,td{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <table style="border: 3px solid blue;">
+        <tr><th colspan="2">Location Object Properties</th></tr>
+        <tr>
+            <td>href</td>
+            <td id="ref"></td>
+        </tr>
+        <tr>
+            <td>Pathname</td>
+            <td id="path"></td>
+        </tr>
+        <tr>
+            <td>protocol</td>
+            <td id="pro"></td>
+        </tr>
+    </table>
+    <script>
+        // let hf = location.href
+        // console.log(hf)
+        document.getElementById('ref').innerHTML = location.href
+        document.getElementById('path').innerHTML = location.pathname
+        document.getElementById('pro').innerHTML = location.protocol
+    </script>
+</body>
+</html>

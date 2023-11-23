@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+</head>
+<body>
+    <h1>Arrays in Javascript</h1>
+    <script>
+        //1. creating a array
+        let q = [12,23,34,45]
+        console.log(q)
+        console.log(typeof q)
+        //accessing elements
+        console.log(q[2])
+        console.log(q[3])
+        console.log(q[13])
+
+        //2. using constructor
+        let p = new Array('hello','Mr','Javascript')
+        console.log(p)
+        console.log(typeof p)
+
+        //array size is not fixed
+        p.push('I')
+        console.log(p)
+        p.push('am')
+        console.log(p)
+        
+        //size of an array
+        console.log(`size of an array p is : ${p.length}`)
+
+        //type is not fixed
+        const r = [12,2,'ask',['asdu',12],67.8,true]
+        console.log(r)
+        console.log(r[3][0])
+        console.log(typeof r)
+        
+    </script>
+</body>
+</html>

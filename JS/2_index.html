@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Message Boxes</title>
+</head>
+<body>
+    <h1>Message Boxes</h1>
+    <script>
+        //window.alert  -   all of these alert,prompt,confirm are window objects
+        // let message = 'Warning 404'
+        // window.alert(message)
+        // alert(message)
+
+        //prompt
+        // let name = prompt('Enter u r name : ')
+        // alert('Hello ' + name)
+
+        //confirm
+        // let a = confirm('Please Confirm')
+        // alert(a)
+        //example for confirm
+        // let choice = confirm('want to open google.com')
+        // if(choice == true){
+        //     location.href="https://google.com"
+        // }
+        // else{
+        //     alert("Not navigating to google")
+        // }
+
+        //console object
+        //log,info,warm,error,table,time,clear
+
+        // console.log("This is log")
+        // console.warn("This is warn")
+        // console.error("This is error")
+        // console.info("This is info")
+
+        //settimeout will run only once as per time duration
+        // setTimeout(function(){
+        //     console.log("clearing..")
+        //     console.clear()
+        // },3000)
+        //setinterval will run only once as per time duration
+        // setInterval(function(){
+        //     console.log("clearing..")
+        //     console.clear()
+        // },3000)
+
+
+        let student={
+            name:'abc',
+            id:12,
+            address:'Hyderabad'
+        }
+        console.log(student)
+        console.log(student.name)
+        console.table(student)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Handling Functions</title>
+</head>
+<body>
+    <h1>String Handling Functions</h1>
+    <script>
+       //string functions
+       let  s = "javascript"
+       console.log(s)
+       let len = s.length
+       console.log(`length of s is : ${len}`)
+
+       //concat
+       let s1 = `new Version of Javascript`
+       console.log(s+" "+s1)
+       console.log(s.concat(" ",s1))
+
+
+       //charAt
+       console.log(s.charAt(2))
+
+       //indexof
+       console.log(s.indexOf("v"))
+
+       //lastindexof
+       console.log(s.lastIndexOf("a"))
+
+       //touppercase
+       console.log(s.toUpperCase())
+
+       //tolowercase
+       console.log(s.toLowerCase())
+
+       //substring(start,end) -- end is not included
+        console.log(s.substring(2,6))
+        console.log(s.substring(2))
+
+        //startswith
+        console.log(s.startsWith('j'))
+
+        //endswith
+        console.log(s.endsWith('script'))
+
+        //split
+        let sp = s1.split(" ")
+        console.log(typeof sp)
+        console.log(sp)
+        console.log(sp[0])
+        console.log(sp[1])
+
+        //trim
+        let s2 = "      new content"
+        let s3 = s2.trim()
+        console.log(s3)
+        console.log(s2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in JS</title>
+</head>
+<body>
+    <h1>Object Operations</h1>
+    <script>
+        const obj={
+            name:'abc',
+            age:30,
+            address:'Hyd',
+            phone:3826
+        }
+        console.log(obj)
+        console.log(typeof obj)
+        console.log(obj.name)
+        console.log(obj['name'])
+
+        //multiworded keys
+        const obj1={
+            name:'abc',
+            age:30,
+            address:'Hyd',
+            phone:3826,
+            // lastName:'xyz'
+            // last_name:'xyz'
+            "last name":'xyz'  
+        }
+        console.log(obj1)
+
+
+
+        //function inside an object
+        const obj2={
+            name:'abc',
+            age:30,
+            address:'Hyd',
+            phone:3826,
+            "last name":'xyz',
+            display:function(){
+                console.log('Display properties')
+                console.log(this.name)
+                console.log(this.age)
+                console.log(this.age)
+                console.log(this.address)
+
+            }
+        }
+        //calling the functions
+        obj2.display()
+        obj2['display']()
+
+        //for..in loop for looping properties
+        for(let key in obj2){
+            console.log(`${key}  --  ${obj2[key]}`)
+        }
+
+        //changing values of property
+        console.log(obj2.name)
+        obj2.name='MNO'
+        obj2["last name"] = 'PQR'
+        console.log(obj2.name)
+        console.log(obj2)
+
+        //dynamically adding properties
+        obj2["email"] = 'example@gmail.com'
+        console.log(obj2)
+        obj2.hel = 'csiu@knca.com'
+        console.log(obj2)
+
+        //deleting properties
+        delete obj2.hel
+        console.log(obj2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="text">Regexp : </label>
+    <input type="text" name="Regexp" id="regExp" /><br /><br />
+    <label for="text">Subject string : </label>
+    <input type="text" name="string" id="str" /><br /><br />
+    <button onclick="testMatch()">Test Match</button>
+    <button onclick="showMatch()">Show Match</button>
+    <script>
+      function testMatch() {
+        const exp = new RegExp(document.getElementById("regExp").value);
+        const text = document.getElementById("str").value;
+        // console.log(text);
+        if (exp.test(text) == true) {
+          alert("Match Successful");
+        } else {
+          alert("Unsuccessful Match");
+        }
+      }
+
+      function showMatch() {
+        const exp = new RegExp(document.getElementById("regExp").value);
+        const text = document.getElementById("str").value;
+        if (exp.test(text) == true) {
+          const pos = text.search(exp);
+          const word = text.match(exp)[0];
+          //   console.log(word);
+          alert(`Match at Position ${pos} : ${word}`);
+        } else {
+          alert("Unsuccessful Match");
+        }
+      }
+    </script>
+  </body>
+</html>

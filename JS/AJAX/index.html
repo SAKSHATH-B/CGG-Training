@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script>
+        function loadInfo(){
+            //call to ajax
+            let request = new XMLHttpRequest()
+            // request.open('GET','about.html')
+            request.open('GET','data.json')
+
+            request.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    // console.log(this.responseText)
+                    // document.getElementById('container').innerHTML = this.responseText
+                    let dataa = JSON.parse(this.responseText)
+                    console.log(dataa)
+                    document.getElementById('container').innerHTML = this.responseText
+                    document.getElementById('container').innerHTML = dataa.heading + " " + dataa.content
+                }
+            }
+            request.send()
+        }
+    </script>
+</head>
+<body>
+    <h1>This is Homepage</h1>
+    <h2>We are learning AJAX</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aliquid dolor illo quod, libero iste! Aperiam consequatur reiciendis dolorum consequuntur.</p>
+    <h1><a href="about.html">ABOUT PAGE</a></h1>
+
+    <button onclick="loadInfo()">Load About</button>
+    <div id="container"></div>
+
+    <!--using jquery-->
+    <button id="jbtn">Jquery Load</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //document is ready
+            $('#jbtn').click(function(){
+                //btn click
+                $.get("data.json",function(data){
+                    console.log('jquery:')
+                    console.log(data)
+                    
+                    document.getElementById('container').innerHTML = data.heading + data.content
+                })
+            })
+        })
+    </script>
+</body>
+</html>

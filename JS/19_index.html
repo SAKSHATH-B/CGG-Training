@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Date & Time Objects</title>
+</head>
+<body>
+    <h1>Date Time Example in JS</h1>
+    <script>
+        let d = new Date()
+        console.log(d)
+        console.log(d.toLocaleDateString())
+        console.log(d.toLocaleTimeString())
+        console.log(d.toUTCString())
+        console.log(`Date ${d.getDate()}`)
+        console.log(`Month ${d.getMonth()+1}`)
+        console.log(`Year ${d.getFullYear()}`)
+        console.log(`Day ${d.getDay()+1}`)
+        console.log(`Hours ${d.getHours()}`)
+        console.log(`Minutes ${d.getMinutes()}`)
+
+        let d1 = new Date('04 October 2023')
+        console.log(d1)
+        let d2 = new Date(2023,9,4)
+        console.log(d2)
+
+    </script>
+</body>
+</html>

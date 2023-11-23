@@ -8,6 +8,7 @@ export const FormMultipleInputs = () => {
   });
 
   const handleChange = (e) => {
+    // console.log(e.target.name);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 

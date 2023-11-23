@@ -17,6 +17,11 @@ import { FormControlledInputs } from "./Components/FromControl/FormControlledInp
 import { ControlledInputsChallenge } from "./Components/FromControl/ControlledInputsChallenge";
 import { FormMultipleInputs } from "./Components/FromControl/FormMultipleInputs";
 import { OtherInputs } from "./Components/FromControl/OtherInputs";
+import { UnControlledInputs } from "./Components/FromControl/UnControlledInputs";
+import { UseRefHook } from "./Components/UseRefHook";
+import { CustomHooks } from "./Components/CustomHooks/CustomHooks";
+import { Chall } from "./Components/CustomHooks/Chall";
+import Navbar from "./Components/ContextAPI/Navbar";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -44,7 +49,12 @@ function App() {
       {/* <FormControlledInputs /> */}
       {/* <ControlledInputsChallenge /> */}
       {/* <FormMultipleInputs /> */}
-      <OtherInputs />
+      {/* <OtherInputs /> */}
+      {/* <UnControlledInputs /> */}
+      {/* <UseRefHook /> */}
+      {/* <CustomHooks /> */}
+      {/* <Chall /> */}
+      <Navbar />
     </>
   );
 }

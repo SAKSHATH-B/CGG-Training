@@ -30,8 +30,6 @@ export const OtherInputs = () => {
             type="checkbox"
             className="form-input"
             onChange={handleShipping}
-            id="shipping"
-            name="shipping"
             checked={shipping}
           />
         </div>
@@ -39,12 +37,7 @@ export const OtherInputs = () => {
           <label htmlFor="framework" className="form-label">
             FrameWork
           </label>
-          <select
-            name="framework"
-            id="framework"
-            value={framework}
-            onChange={handleFramework}
-          >
+          <select value={framework} onChange={handleFramework}>
             {frameworks.map((framework) => {
               return <option key={framework}>{framework}</option>;
             })}

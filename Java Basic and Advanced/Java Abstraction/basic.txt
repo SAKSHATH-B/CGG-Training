@@ -1,0 +1,37 @@
+modifiers returntype methodname(Parameter list) ---> method prototype
+{
+    method body
+}
+
+normal/concrete methods
+
+abstract modifiers returntype methodname(Parameter list); ---> abstract method prototype
+
+
+0-100% abstraction
+
+abstract class abstractClass{   ---> 0% abstraction
+    n1;
+    n2;
+    n3;
+    ,
+    ,
+    ,
+}
+abstract class abstractClass{   ---> some% abstraction
+    a1;
+    n2;
+    n3;
+    ,
+    ,
+    ,
+}
+abstract class abstractClass{   ---> 100% abstraction
+    a1;
+    a2;
+    a3;
+    ,
+    ,
+    ,
+}
+

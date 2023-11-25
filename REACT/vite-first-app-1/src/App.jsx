@@ -24,6 +24,8 @@ import { Chall } from "./Components/CustomHooks/Chall";
 import Navbar from "./Components/ContextAPI/Navbar";
 import { ReducerBasics } from "./Components/useReducer/ReducerBasics";
 import { Memo } from "./Components/Performance/Memo";
+import { PerformanceBasics } from "./Components/Performance/PerformanceBasics";
+import { UseTransition } from "./Components/Performance/UseTransition";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -58,7 +60,9 @@ function App() {
       {/* <Chall /> */}
       {/* <Navbar /> */}
       {/* <ReducerBasics /> */}
-      <Memo />
+      {/* <PerformanceBasics /> */}
+      {/* <Memo /> */}
+      <UseTransition />
     </>
   );
 }

@@ -1,0 +1,14 @@
+Threads & virtual Threads(video)
+Thread Synchronization
+producer consumer problem
+
+JDBC Project
+
+Debugging concepts
+
+React
+1.newsapp
+2.blog app studying
+3.formik libraries
+//4.course app
+5.TODO Project

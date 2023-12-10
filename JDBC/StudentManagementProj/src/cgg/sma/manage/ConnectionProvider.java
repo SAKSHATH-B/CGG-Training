@@ -11,10 +11,10 @@ public class ConnectionProvider {
 	public static Connection createC() {
 		try {
 			//load the driver
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("org.postgresql.Driver");
 		
-		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/student_manage","root","root");
-		
+		conn=DriverManager.getConnection("jdbc:postgresql://localhost:5432/test","postgres","postgres");
+		System.out.println("Connection Established");
 		
 		}
 		catch(ClassNotFoundException|SQLException e) {

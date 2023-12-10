@@ -54,7 +54,7 @@ public class StudentDAO {
 		return f;
 	}
 	
-	public static void showAllStudents() {
+	public static boolean showAllStudents() {
 		boolean f=false;
 		//jdbc code...
 		Connection con=ConnectionProvider.createC();
@@ -69,7 +69,7 @@ public class StudentDAO {
 			int id=rs.getInt(1);
 			String name=rs.getString(2);
 			String phone=rs.getString(3);
-			String city=s.getString("scity");
+			String city=rs.getString("scity");
 			
 			System.out.println("Id : "+id);
 			System.out.println("Name : "+name);

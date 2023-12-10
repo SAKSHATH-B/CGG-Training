@@ -18,6 +18,16 @@ export default (state = initialState, action) => {
       const newState = state.filter((todo) => todo.id !== action.payload);
       return newState;
 
+    case UPDATE_TODO:
+      const updateState = state.map((todo) => {
+        if (todo.id === action.payload.todoId) {
+          todo.title = action.payload.todo.title;
+          todo.description = action.payload.todo.title;
+        }
+        return todo;
+      });
+      return updateState;
+
     case CLEAR_TODO:
       return [];
 

@@ -12,5 +12,7 @@
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
+        <mapping class="cgg.hibernate.Student" />
+        <mapping class="cgg.hibernate.Address" />
     </session-factory>
 </hibernate-configuration>

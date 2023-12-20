@@ -10,9 +10,22 @@
         <property name="connection.password">postgres</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="connection.url">jdbc:postgresql://localhost:5432/kkhibernate</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
 
-        <mapping class="entitiesAndCRUD.Employee" />
+        <!-- <mapping class="com.cgg.CRUDwithDAOandService.Employee" /> -->
+        <!-- <mapping class="com.cgg.entitiesAndCRUD.Employee" /> -->
+        <!-- <mapping class="com.cgg.ConfgCollandAddingPKs.Employee" /> -->
+        <!-- <mapping class="com.cgg.LazyandEager.Employee" /> -->
+
+        <!-- <mapping class="com.cgg.OneToOne.Address" />
+        <mapping class="com.cgg.OneToOne.Employee" /> -->
+
+        <!-- <mapping class="com.cgg.OneToMany.Address" />
+        <mapping class="com.cgg.OneToMany.Employee" /> -->
+
+        <mapping class="com.cgg.ManyToMany.Address" />
+        <mapping class="com.cgg.ManyToMany.Employee" />
     </session-factory>
 </hibernate-configuration>

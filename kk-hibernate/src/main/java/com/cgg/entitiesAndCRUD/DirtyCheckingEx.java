@@ -1,4 +1,4 @@
-package entitiesAndCRUD;
+package com.cgg.entitiesAndCRUD;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -12,7 +12,12 @@
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
         <mapping class="cgg.hibernate.Student" />
         <mapping class="cgg.hibernate.Address" />
+        <mapping class="cgg.hibernate.map.Question" />
+        <mapping class="cgg.hibernate.map.Answer" />
+        <!-- <mapping class="cgg.hibernate.manytomany.Employee" />
+        <mapping class="cgg.hibernate.manytomany.Project" /> -->
     </session-factory>
 </hibernate-configuration>

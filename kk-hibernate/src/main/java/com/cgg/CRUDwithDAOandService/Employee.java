@@ -1,4 +1,4 @@
-package entitiesAndCRUD;
+package com.cgg.CRUDwithDAOandService;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

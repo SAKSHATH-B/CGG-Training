@@ -1,5 +1,9 @@
 package com.cgg;
 
+import java.time.Instant;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
 /**
  * Hello world!
  *
@@ -7,6 +11,12 @@ package com.cgg;
 public class App {
 
   public static void main(String[] args) {
-    System.out.println("Hello");
+    SessionFactory sessionFactory = connection.getSessionFactory();
+    Session session = sessionFactory.openSession();
+
+    Instant singleResult = session
+      .createNativeQuery("select now();", Instant.class)
+      .getSingleResult();
+    System.out.println(singleResult);
   }
 }

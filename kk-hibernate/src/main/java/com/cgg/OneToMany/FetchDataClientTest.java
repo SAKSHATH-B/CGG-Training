@@ -7,8 +7,8 @@ import org.hibernate.cfg.Configuration;
 public class FetchDataClientTest {
 
   public static void main(String[] args) {
-    // getEmployeeAndAddressByEmpId();
-    getEmployeeAndAddressByAddressId();
+    getEmployeeAndAddressByEmpId();
+    // getEmployeeAndAddressByAddressId();
   }
 
   private static void getEmployeeAndAddressByAddressId() {
@@ -21,10 +21,10 @@ public class FetchDataClientTest {
       Address address = session.get(Address.class, 1);
       System.out.println(address);
       if (address != null) {
-        System.out.println(address.getEmployee());
+        Employee employee = address.getEmployee();
+        System.out.println(employee);
       }
     } catch (HibernateException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }

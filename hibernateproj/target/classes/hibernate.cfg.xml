@@ -19,5 +19,8 @@
         <mapping class="cgg.hibernate.map.Answer" />
         <!-- <mapping class="cgg.hibernate.manytomany.Employee" />
         <mapping class="cgg.hibernate.manytomany.Project" /> -->
+        <mapping class="cgg.hibernate.inheritance.Vehicle" />
+        <mapping class="cgg.hibernate.inheritance.TwoWheeler" />
+        <mapping class="cgg.hibernate.inheritance.FourWheeler" />
     </session-factory>
 </hibernate-configuration>

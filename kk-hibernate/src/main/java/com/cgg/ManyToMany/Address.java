@@ -115,8 +115,6 @@ public class Address {
       state +
       ", pincode=" +
       pincode +
-      ", empList=" +
-      empList +
       "]"
     );
   }

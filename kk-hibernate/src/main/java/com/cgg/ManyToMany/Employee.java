@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -38,6 +40,11 @@ public class Employee {
   private double salary;
 
   @ManyToMany(cascade = CascadeType.ALL)
+  @JoinTable(
+    name = "employee_address_table",
+    joinColumns = @JoinColumn(name = "employee_id"),
+    inverseJoinColumns = @JoinColumn(name = "address_id")
+  )
   private List<Address> addressList = new ArrayList<>();
 
   public Employee(
@@ -119,8 +126,6 @@ public class Employee {
       doj +
       ", salary=" +
       salary +
-      ", addressList=" +
-      addressList +
       "]"
     );
   }

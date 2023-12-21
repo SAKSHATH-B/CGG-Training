@@ -111,8 +111,6 @@ public class Address {
       state +
       ", pincode=" +
       pincode +
-      ", employee=" +
-      employee +
       "]"
     );
   }

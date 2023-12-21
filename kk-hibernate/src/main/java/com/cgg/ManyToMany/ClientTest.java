@@ -54,8 +54,8 @@ public class ClientTest {
       address2.getEmpList().add(employee1);
       address3.getEmpList().add(employee1);
 
-      employee1.getAddressList().add(address2);
-      employee1.getAddressList().add(address3);
+      employee2.getAddressList().add(address2);
+      employee2.getAddressList().add(address3);
 
       address2.getEmpList().add(employee2);
       address3.getEmpList().add(employee2);

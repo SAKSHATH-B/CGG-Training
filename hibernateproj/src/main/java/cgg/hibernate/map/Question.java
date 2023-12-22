@@ -1,5 +1,6 @@
 package cgg.hibernate.map;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,7 +22,11 @@ public class Question {
   //   @OneToOne
   //   @JoinColumn(name = "a_id")
   //   private Answer answer;
-  @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+  @OneToMany(
+    mappedBy = "question",
+    fetch = FetchType.EAGER,
+    cascade = CascadeType.ALL
+  )
   private List<Answer> answers;
 
   public Question(int questionId, String question, List<Answer> answers) {

@@ -59,8 +59,9 @@ public class HQLExample {
     // System.out.println(res1 + " objects updated...");
 
     //executing join query
-    Query query4 = session.createQuery(
-      "select q.question,q.questionId,a.answer from Question q INNER JOIN q.answers as a"
+    Query<Object[]> query4 = session.createQuery(
+      "select q.question,q.questionId,a.answer from Question q INNER JOIN q.answers as a",
+      Object[].class
     );
     List<Object[]> resultList = query4.getResultList();
     for (Object[] objects : resultList) {

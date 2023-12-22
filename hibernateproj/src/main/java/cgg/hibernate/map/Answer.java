@@ -23,6 +23,11 @@ public class Answer {
   @JoinColumn(name = "q_id")
   private Question question;
 
+  public Answer(int answerId, String answer) {
+    this.answerId = answerId;
+    this.answer = answer;
+  }
+
   public Answer(int answerId, String answer, Question question) {
     this.answerId = answerId;
     this.answer = answer;

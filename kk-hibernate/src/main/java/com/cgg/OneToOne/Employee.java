@@ -36,8 +36,8 @@ public class Employee {
   @Column(name = "salary")
   private double salary;
 
-  // @OneToOne(cascade = CascadeType.PERSIST)
-  @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @OneToOne(cascade = CascadeType.REMOVE)
+  // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinColumn(name = "address_id")
   private Address address;
 

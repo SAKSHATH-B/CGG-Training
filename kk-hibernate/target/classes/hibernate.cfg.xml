@@ -37,6 +37,28 @@
         <!-- <mapping class="com.cgg.hql.OneToMany.Address" />
         <mapping class="com.cgg.hql.OneToMany.Employee" /> -->
 
-        <mapping class="com.cgg.hql.AggregateFunc.Employee" />
+        <!-- <mapping class="com.cgg.hql.AggregateFunc.Employee" /> -->
+
+
+        <!-- <mapping class="com.cgg.hql.GroupByandHavingHQL.Employee" />
+        <mapping class="com.cgg.hql.GroupByandHavingHQL.Department" /> -->
+
+        <!-- <mapping class="com.cgg.MergeandUpdateCascade.Employee" /> -->
+
+        <!-- <mapping class="com.cgg.Inheritance.DefaultInheritance.Person" />
+        <mapping class="com.cgg.Inheritance.DefaultInheritance.Employee" />
+        <mapping class="com.cgg.Inheritance.DefaultInheritance.Student" /> -->
+
+        <mapping class="com.cgg.Inheritance.singleTableInheritance.Person" />
+        <mapping class="com.cgg.Inheritance.singleTableInheritance.Employee" />
+        <mapping class="com.cgg.Inheritance.singleTableInheritance.Student" />
+        
+        <!-- <mapping class="com.cgg.Inheritance.TablePerClassInheritance.Person" />
+        <mapping class="com.cgg.Inheritance.TablePerClassInheritance.Employee" />
+        <mapping class="com.cgg.Inheritance.TablePerClassInheritance.Student" /> -->
+        
+        <!-- <mapping class="com.cgg.Inheritance.JoinedInheritance.Person" />
+        <mapping class="com.cgg.Inheritance.JoinedInheritance.Employee" />
+        <mapping class="com.cgg.Inheritance.JoinedInheritance.Student" /> -->
     </session-factory>
 </hibernate-configuration>

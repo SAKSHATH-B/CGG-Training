@@ -7,8 +7,9 @@ import org.hibernate.cfg.Configuration;
 public class FetchDataClientTest {
 
   public static void main(String[] args) {
-    getEmployeeAndAddressByEmpId();
+    // getEmployeeAndAddressByEmpId();
     // getEmployeeAndAddressByAddressId();
+    deleteEmpbyId();
   }
 
   private static void getEmployeeAndAddressByAddressId() {
@@ -38,6 +39,25 @@ public class FetchDataClientTest {
       System.out.println(employee);
       Address address = employee.getAddress();
       System.out.println(address);
+    } catch (HibernateException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+
+  private static void deleteEmpbyId() {
+    try (
+      Session session = new Configuration()
+        .configure()
+        .buildSessionFactory()
+        .openSession()
+    ) {
+      Employee employee = session.get(Employee.class, 2);
+      if (employee != null) {
+        session.beginTransaction();
+        session.remove(employee);
+        session.getTransaction().commit();
+      }
     } catch (HibernateException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

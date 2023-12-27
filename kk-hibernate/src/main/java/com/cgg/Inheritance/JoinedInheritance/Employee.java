@@ -64,4 +64,22 @@ public class Employee extends Person {
   public void setEmail(String email) {
     this.email = email;
   }
+
+  @Override
+  public String toString() {
+    return (
+      "Employee [salary=" +
+      salary +
+      ", doj=" +
+      doj +
+      ", deptName=" +
+      deptName +
+      ", bonus=" +
+      bonus +
+      ", email=" +
+      email +
+      "]" +
+      super.toString()
+    );
+  }
 }

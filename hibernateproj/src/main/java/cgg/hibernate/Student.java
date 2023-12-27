@@ -1,9 +1,22 @@
 package cgg.hibernate;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedQuery;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
+@NamedQuery(name = "Student.byId", query = "from Student where id=:x")
+@NamedNativeQuery(
+  name = "Student.byName",
+  query = "select * from Student where name=:y",
+  resultClass = Student.class
+)
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
 
   @Id
@@ -11,6 +24,7 @@ public class Student {
 
   private String name;
   private String city;
+
   private Certificate certi;
 
   public Student(int id, String name, String city, Certificate certi) {

@@ -1,5 +1,7 @@
 package cgg.hibernate;
 
+//tally the version of hibernate-core to hibernate-ehcache the error will be gone
+
 import jakarta.persistence.Embeddable;
 
 @Embeddable

@@ -49,9 +49,9 @@
         <mapping class="com.cgg.Inheritance.DefaultInheritance.Employee" />
         <mapping class="com.cgg.Inheritance.DefaultInheritance.Student" /> -->
 
-        <mapping class="com.cgg.Inheritance.singleTableInheritance.Person" />
+        <!-- <mapping class="com.cgg.Inheritance.singleTableInheritance.Person" />
         <mapping class="com.cgg.Inheritance.singleTableInheritance.Employee" />
-        <mapping class="com.cgg.Inheritance.singleTableInheritance.Student" />
+        <mapping class="com.cgg.Inheritance.singleTableInheritance.Student" /> -->
         
         <!-- <mapping class="com.cgg.Inheritance.TablePerClassInheritance.Person" />
         <mapping class="com.cgg.Inheritance.TablePerClassInheritance.Employee" />
@@ -60,5 +60,21 @@
         <!-- <mapping class="com.cgg.Inheritance.JoinedInheritance.Person" />
         <mapping class="com.cgg.Inheritance.JoinedInheritance.Employee" />
         <mapping class="com.cgg.Inheritance.JoinedInheritance.Student" /> -->
+
+        <!-- <mapping class="com.cgg.hql.namedqueries.Employee" />
+        <mapping class="com.cgg.hql.namedqueries.Department" /> -->
+        
+        <!-- <mapping class="com.cgg.hql.namednativequeries.Employee" />
+        <mapping class="com.cgg.hql.namednativequeries.Department" /> -->
+
+        <!-- <mapping class="com.cgg.nativesql.Person" />
+        <mapping class="com.cgg.nativesql.Phone" />
+        <mapping class="com.cgg.nativesql.Call" /> -->
+
+        <!-- <mapping class="com.cgg.storedProcedures.Person" />
+        <mapping class="com.cgg.storedProcedures.Phone" /> -->
+
+        <mapping class="com.cgg.criteriaAPI.Employee" />
+
     </session-factory>
 </hibernate-configuration>

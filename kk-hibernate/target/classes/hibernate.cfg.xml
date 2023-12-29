@@ -74,7 +74,27 @@
         <!-- <mapping class="com.cgg.storedProcedures.Person" />
         <mapping class="com.cgg.storedProcedures.Phone" /> -->
 
-        <mapping class="com.cgg.criteriaAPI.Employee" />
+        <!-- <mapping class="com.cgg.criteriaAPI.Employee" /> -->
+
+        <!-- <mapping class="com.cgg.criteriaAPI.criteriaWithMultipleRoot.Person" />
+        <mapping class="com.cgg.criteriaAPI.criteriaWithMultipleRoot.Phone" />
+        <mapping class="com.cgg.criteriaAPI.criteriaWithMultipleRoot.Partner" /> -->
+
+        <!-- <mapping class="com.cgg.criteriaAPI.joinquery.Person" />
+        <mapping class="com.cgg.criteriaAPI.joinquery.Phone" />
+        <mapping class="com.cgg.criteriaAPI.joinquery.Call" /> -->
+
+        <!-- <mapping class="com.cgg.criteriaAPI.criteriabuilderparameter.Person" /> -->
+
+        <!-- <mapping class="com.cgg.criteriaAPI.AggregateFuncJoinGrpByHaving.Department" /> 
+        <mapping class="com.cgg.criteriaAPI.AggregateFuncJoinGrpByHaving.Employee" />  -->
+
+
+        <!-- <mapping class="com.cgg.criteriaAPI.orberby.Employee" /> -->
+
+        <mapping class="com.cgg.Persistance.Person" />
+        <mapping class="com.cgg.Persistance.Book" />
+        
 
     </session-factory>
 </hibernate-configuration>

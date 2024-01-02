@@ -1,3 +1,9 @@
 cgg\servlets\FirstServlet.class
 cgg\servlets\SecondServlet.class
+cgg\servlets\SuccessServlet.class
 cgg\servlets\ThirdServlet.class
+cgg\attr\S2.class
+cgg\servlets\RegisterServlet.class
+cgg\stateless\Servlet1.class
+cgg\attr\S1.class
+cgg\stateless\Servlet2.class

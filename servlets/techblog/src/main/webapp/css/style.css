@@ -1,6 +1,18 @@
-body{
-    background-color: cyan;
+body {
+  /* background-color: cyan; */
 }
-.primary-background{
-    background: #ba68c8;
+.primary-background {
+  background: #4db6ac !important;
+}
+.banner-background {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
 }

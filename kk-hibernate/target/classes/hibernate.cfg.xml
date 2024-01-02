@@ -92,8 +92,21 @@
 
         <!-- <mapping class="com.cgg.criteriaAPI.orberby.Employee" /> -->
 
-        <mapping class="com.cgg.Persistance.Person" />
-        <mapping class="com.cgg.Persistance.Book" />
+        <!-- <mapping class="com.cgg.Persistance.Person" />
+        <mapping class="com.cgg.Persistance.Book" /> -->
+
+        <!-- <mapping class="com.cgg.binarydataAndBlob.Person" />
+        <mapping class="com.cgg.binarydataAndBlob.Book" /> -->
+
+        <!-- <mapping class="com.cgg.dateandtime.Person" />
+        <mapping class="com.cgg.dateandtime.Book" /> -->
+
+        <!-- <mapping class="com.cgg.MoreAnnotations.FormulaAnnotation.Account" /> -->
+
+        <!-- <mapping class="com.cgg.MoreAnnotations.NaturalID.Person" />
+        <mapping class="com.cgg.MoreAnnotations.NaturalID.Book" /> -->
+
+        <mapping class="com.cgg.BatchProcessing.Person" />
         
 
     </session-factory>

@@ -106,7 +106,22 @@
         <!-- <mapping class="com.cgg.MoreAnnotations.NaturalID.Person" />
         <mapping class="com.cgg.MoreAnnotations.NaturalID.Book" /> -->
 
-        <mapping class="com.cgg.BatchProcessing.Person" />
+        <!-- <mapping class="com.cgg.BatchProcessing.Person" /> -->
+
+        <!-- <mapping class="com.cgg.Fetching.Employee" />
+        <mapping class="com.cgg.Fetching.Department" />
+        <mapping class="com.cgg.Fetching.Project" /> -->
+
+        <!-- <mapping class="com.cgg.Fetching.BatchFetching.Employee" />
+        <mapping class="com.cgg.Fetching.BatchFetching.Department" /> -->
+
+        <!-- <mapping class="com.cgg.Fetching.NplusOneProblem.Employee" />
+        <mapping class="com.cgg.Fetching.NplusOneProblem.Department" /> -->
+
+        <!-- <mapping class="com.cgg.caching.Employee" /> -->
+
+        <mapping class="com.cgg.OptimisticLocking.Person" />
+
         
 
     </session-factory>

@@ -39,18 +39,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 offset-md-4">
+            <form action="loginservlet" method="post">
             <div class="card">
               <div class="primary-background text-white text-center">
                 <span class="fa fa-user-plus fa-3x"></span>
                 <p>Login Here</p>
               </div>
               <div class="card-body">
-                <form>
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Email address</label>
                     <input
                       type="email"
                       class="form-control"
+                      name="email"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
                       placeholder="Enter email"
@@ -64,11 +65,12 @@
                     <input
                       type="password"
                       class="form-control"
+                      name="password"
                       id="exampleInputPassword1"
                       placeholder="Password"
                     />
                   </div>
-                  <div class="mb-3">
+                  <!-- <div class="mb-3">
                     <input
                       type="checkbox"
                       class="form-check-input"
@@ -77,12 +79,16 @@
                     <label class="form-check-label" for="exampleCheck1"
                       >Check me out</label
                     >
+                  </div> -->
+                  <div class="container text-center">
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </main>

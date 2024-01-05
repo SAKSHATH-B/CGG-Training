@@ -4,6 +4,7 @@ import cgg.tech.blog.dao.UserDao;
 import cgg.tech.blog.entities.User;
 import cgg.tech.blog.helper.ConnectionProvider;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@MultipartConfig
 @WebServlet("/registerservlet")
 public class RegisterServlet extends HttpServlet {
 
@@ -37,9 +39,9 @@ public class RegisterServlet extends HttpServlet {
       UserDao userDao = new UserDao(ConnectionProvider.getConnection());
 
       if (userDao.saveUser(user)) {
-        writer.println("User Registered Successfully...");
+        writer.println("done");
       } else {
-        writer.println("Error 404");
+        writer.println("error");
       }
     }
   }

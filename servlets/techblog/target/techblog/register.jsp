@@ -1,3 +1,4 @@
+<%@ page errorPage="error_page.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,13 +18,18 @@
     <style>
       .banner-background {
         clip-path: polygon(
-          50% 0%,
-          92% 5%,
+          0 16%,
+          15% 0,
+          15% 0%,
+          85% 0%,
+          85% 100%,
+          100% 0,
           100% 86%,
-          0 100%,
-          100% 100%,
-          0 86%,
-          10% 5%
+          100% 86%,
+          85% 100%,
+          15% 100%,
+          15% 0,
+          0 100%
         );
       }
     </style>
@@ -46,7 +52,7 @@
                 <p>Register Here</p>
               </div>
               <div class="card-body">
-                <form action="registerservlet" method="post">
+                <form id="reg-form" action="registerservlet" method="post">
                   <div class="mb-3">
                     <label for="user_name" class="form-label">User Name</label>
                     <input
@@ -114,7 +120,17 @@
                       >Agree Terms and Conditions</label
                     >
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <div
+                    id="loader"
+                    class="container text-center"
+                    style="display: none"
+                  >
+                    <span class="fa fa-refresh fa-spin fa-4x"></span>
+                    <p>Please Wait...</p>
+                  </div>
+                  <button id="done" type="submit" class="btn btn-primary">
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
@@ -124,9 +140,61 @@
     </main>
 
     <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        console.log("loaded");
+
+        $("#reg-form").on("submit", function (event) {
+          event.preventDefault();
+          let formData = new FormData(this);
+          $("#loader").show();
+          $("#done").hide();
+          $.ajax({
+            url: "registerservlet",
+            type: "POST",
+            data: formData,
+            success: function (data, textStatus, jqXHR) {
+              console.log(data);
+              $("#loader").hide();
+              $("#done").show();
+              if (data.trim() === "done") {
+                swal(
+                  "Registered Successfully...Redirectiong to login page"
+                ).then((value) => {
+                  window.location = "login.jsp";
+                });
+              } else {
+                swal(data);
+              }
+            },
+            error: function (jqXHR, textxStatus, errorThrown) {
+              console.log(jqXHR);
+              $("#loader").show();
+              $("#done").hide();
+              swal("Something went wrong..,Please try again");
+            },
+            processData: false,
+            contentType: false,
+          });
+        });
+      });
+    </script>
   </body>
 </html>

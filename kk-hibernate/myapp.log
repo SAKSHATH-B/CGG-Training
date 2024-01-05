@@ -1,0 +1,545 @@
+2024-Jan-04 15:29:30 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@62b969c4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@dcc6211)
+2024-Jan-04 15:29:30 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@47ec7422) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@48535004)
+2024-Jan-04 15:29:31 pm [main] DEBUG org.hibernate.SQL - 
+    create table person (
+        id bigserial not null,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    )
+2024-Jan-04 15:29:31 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       drop constraint if exists UK_peg7sp1le3ac0l7gdfld6wmb1
+2024-Jan-04 15:29:31 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2024-Jan-04 15:29:31 pm [main] INFO  com.cgg.Interceptor.LoggerInterceptor - onSave method is called...
+2024-Jan-04 15:29:31 pm [main] INFO  com.cgg.Interceptor.LoggerInterceptor - Person [id=null, personName=Sean Murphy, username=seanm, password=pass#123, accessLevel=1, version=0]
+2024-Jan-04 15:29:31 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 15:29:31 pm [main] INFO  com.cgg.Interceptor.CT - Person Record is saved successfully
+2024-Jan-04 15:29:31 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@51d8f2f2) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@4b476233)
+2024-Jan-04 15:29:32 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@72fb989b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4f235e8e)
+2024-Jan-04 15:29:32 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 15:29:32 pm [main] INFO  com.cgg.Interceptor.LoggerInterceptor - onSave method is called...
+2024-Jan-04 15:29:32 pm [main] INFO  com.cgg.Interceptor.LoggerInterceptor - Person [id=1, personName=null, username=null, password=null, accessLevel=0, version=0]
+2024-Jan-04 15:38:58 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@48535004) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@610df783)
+2024-Jan-04 15:38:58 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@f3fcd59) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2b56f5f8)
+2024-Jan-04 15:38:59 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 15:38:59 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 15:38:59 pm [main] INFO  com.cgg.Interceptor.SaveDataCT - Person records saved successfully...
+2024-Jan-04 16:07:56 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6411d3c8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2116b68b)
+2024-Jan-04 16:07:56 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@11de56e6) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@616b241a)
+2024-Jan-04 16:07:58 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@55222ee9) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3181d4de)
+2024-Jan-04 16:07:58 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4f64d9cb) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@639c7f9c)
+2024-Jan-04 16:07:58 pm [Thread-1] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:07:58 pm [Thread-3] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:07:58 pm [Thread-3] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        password=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:08:03 pm [Thread-1] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        password=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:42:23 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@64c4c01) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1aa99005)
+2024-Jan-04 16:42:23 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@592238c5) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6ee8dcd3)
+2024-Jan-04 16:42:24 pm [main] DEBUG org.hibernate.SQL - 
+    create table person (
+        id bigserial not null,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    )
+2024-Jan-04 16:42:24 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       drop constraint if exists UK_peg7sp1le3ac0l7gdfld6wmb1
+2024-Jan-04 16:42:24 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2024-Jan-04 16:42:24 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 16:42:25 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:42:25 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:44:24 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@48535004) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@610df783)
+2024-Jan-04 16:44:24 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@f3fcd59) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2b56f5f8)
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    create table person (
+        id bigserial not null,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    )
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       drop constraint if exists UK_peg7sp1le3ac0l7gdfld6wmb1
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 16:44:26 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:44:26 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:46:04 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@b8e246c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1f387978)
+2024-Jan-04 16:46:04 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7cb2651f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4441d567)
+2024-Jan-04 16:46:05 pm [main] DEBUG org.hibernate.SQL - 
+    create table person (
+        id bigserial not null,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    )
+2024-Jan-04 16:46:05 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       drop constraint if exists UK_peg7sp1le3ac0l7gdfld6wmb1
+2024-Jan-04 16:46:05 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2024-Jan-04 16:46:06 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 16:46:06 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:46:06 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:46:06 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:53:37 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2b56f5f8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@79d743e6)
+2024-Jan-04 16:53:37 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@776802b0) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@64c4c01)
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    create table person (
+        id bigserial not null,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    )
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       drop constraint if exists UK_peg7sp1le3ac0l7gdfld6wmb1
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2024-Jan-04 16:53:39 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:53:39 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:54:37 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2116b68b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@11de56e6)
+2024-Jan-04 16:54:37 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@616b241a) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@b8e246c)
+2024-Jan-04 16:54:39 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:54:39 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:54:39 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:55:49 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@47ec7422) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@48535004)
+2024-Jan-04 16:55:49 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@610df783) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@f3fcd59)
+2024-Jan-04 16:55:50 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:55:50 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:55:50 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is updated successfully
+2024-Jan-04 16:55:50 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:55:51 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:56:25 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is saved successfully
+2024-Jan-04 16:56:25 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 16:56:25 pm [main] INFO  com.cgg.EventListeners.SaveDataClientTest - Person Record is updated successfully
+2024-Jan-04 16:56:25 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        person 
+    set
+        accress_level=?,
+        version=? 
+    where
+        id=? 
+        and version=?
+2024-Jan-04 16:56:25 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        p1_0.id,
+        p1_0.accress_level,
+        p1_0.password,
+        p1_0.person_name,
+        p1_0.user_name,
+        p1_0.version 
+    from
+        person p1_0 
+    where
+        p1_0.id=?
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    create table customer (
+        id bigserial not null,
+        created_on timestamp(6),
+        first_name varchar(100) not null,
+        last_name varchar(100) not null,
+        primary key (id)
+    )
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    create table customer_AUD (
+        id bigint not null,
+        REV integer not null,
+        REVTYPE smallint,
+        created_on timestamp(6),
+        first_name varchar(100),
+        last_name varchar(100),
+        primary key (REV, id)
+    )
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    create table REVINFO (
+        REV integer not null,
+        REVTSTMP bigint,
+        primary key (REV)
+    )
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    create sequence REVINFO_SEQ start with 1 increment by 50
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    alter table if exists customer_AUD 
+       add constraint FK3bqyogu5eqso9yqni4l7cssod 
+       foreign key (REV) 
+       references REVINFO
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer
+        (created_on, first_name, last_name) 
+    values
+        (?, ?, ?)
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer
+        (created_on, first_name, last_name) 
+    values
+        (?, ?, ?)
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        nextval('REVINFO_SEQ')
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        REVINFO
+        (REVTSTMP, REV) 
+    values
+        (?, ?)
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer_AUD
+        (REVTYPE, created_on, first_name, last_name, REV, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-Jan-04 17:05:15 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer_AUD
+        (REVTYPE, created_on, first_name, last_name, REV, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_on,
+        c1_0.first_name,
+        c1_0.last_name 
+    from
+        customer c1_0 
+    where
+        c1_0.id=?
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    update
+        customer 
+    set
+        created_on=?,
+        first_name=?,
+        last_name=? 
+    where
+        id=?
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        nextval('REVINFO_SEQ')
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        REVINFO
+        (REVTSTMP, REV) 
+    values
+        (?, ?)
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer_AUD
+        (REVTYPE, created_on, first_name, last_name, REV, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.created_on,
+        c1_0.first_name,
+        c1_0.last_name 
+    from
+        customer c1_0 
+    where
+        c1_0.id=?
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        customer 
+    where
+        id=?
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    select
+        nextval('REVINFO_SEQ')
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        REVINFO
+        (REVTSTMP, REV) 
+    values
+        (?, ?)
+2024-Jan-04 17:05:16 pm [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        customer_AUD
+        (REVTYPE, created_on, first_name, last_name, REV, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-Jan-04 17:21:54 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@348d18a3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6c65860d)
+2024-Jan-04 17:21:54 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@2d000e80) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7cf283e1)
+2024-Jan-04 17:24:01 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@d56aaa6) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6972c30a)
+2024-Jan-04 17:24:01 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@57a48985) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@1ab6718)
+2024-Jan-04 17:24:04 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@58f7215c) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@55638165)
+2024-Jan-04 17:24:04 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@4fa91d5b) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7ce30c0b)
+2024-Jan-04 17:25:06 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2c2db130) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@327c7bea)
+2024-Jan-04 17:25:06 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@348d18a3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6c65860d)
+2024-Jan-04 17:25:08 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@38a38ed4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1e29a81a)
+2024-Jan-04 17:25:08 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7b4b8199) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4bbf20d1)
+2024-Jan-04 17:25:36 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@2c2db130) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@327c7bea)
+2024-Jan-04 17:25:36 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@348d18a3) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6c65860d)
+2024-Jan-04 17:33:44 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@1ab6718) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@3910fe11)
+2024-Jan-04 17:33:44 pm [main] DEBUG org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@460510aa) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@351e414e)

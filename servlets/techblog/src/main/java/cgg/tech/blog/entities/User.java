@@ -4,16 +4,25 @@ import java.util.Date;
 
 public class User {
 
-  private String id;
+  private int id;
   private String name;
   private String email;
   private String password;
   private String about;
   private String gender;
   private Date rdate;
+  private String profile;
+
+  public String getProfile() {
+    return profile;
+  }
+
+  public void setProfile(String profile) {
+    this.profile = profile;
+  }
 
   public User(
-    String id,
+    int id,
     String name,
     String email,
     String password,
@@ -46,11 +55,11 @@ public class User {
 
   public User() {}
 
-  public String getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(int id) {
     this.id = id;
   }
 

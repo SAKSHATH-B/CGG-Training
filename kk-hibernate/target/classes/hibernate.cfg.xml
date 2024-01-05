@@ -120,8 +120,13 @@
 
         <!-- <mapping class="com.cgg.caching.Employee" /> -->
 
-        <mapping class="com.cgg.OptimisticLocking.Person" />
+        <!-- <mapping class="com.cgg.OptimisticLocking.Person" /> -->
 
+        <!-- <mapping class="com.cgg.Interceptor.Person" /> -->
+
+        <!-- <mapping class="com.cgg.EventListeners.Person" /> -->
+
+        <mapping class="com.cgg.EnversAuditing.Customer" />
         
 
     </session-factory>

@@ -1,3 +1,4 @@
+<%@ page import="cgg.tech.blog.entities.Message" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,12 +41,18 @@
         <div class="row">
           <div class="col-md-4 offset-md-4">
             <form action="loginservlet" method="post">
-            <div class="card">
-              <div class="primary-background text-white text-center">
-                <span class="fa fa-user-plus fa-3x"></span>
-                <p>Login Here</p>
-              </div>
-              <div class="card-body">
+              <div class="card">
+                <div class="primary-background text-white text-center">
+                  <span class="fa fa-user-plus fa-3x"></span>
+                  <p>Login Here</p>
+                </div>
+                <% Message m = (Message)session.getAttribute("msg");
+                if(m!=null){ %>
+                <div class="alert <%= m.getCssClass() %>" role="alert">
+                  <%= m.getContent() %>
+                </div>
+                <% session.removeAttribute("msg"); } %>
+                <div class="card-body">
                   <div class="mb-3">
                     <label for="exampleInputEmail1">Email address</label>
                     <input
@@ -87,11 +94,17 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"

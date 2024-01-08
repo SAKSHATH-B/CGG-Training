@@ -126,7 +126,9 @@
 
         <!-- <mapping class="com.cgg.EventListeners.Person" /> -->
 
-        <mapping class="com.cgg.EnversAuditing.Customer" />
+        <!-- <mapping class="com.cgg.EnversAuditing.Customer" /> -->
+
+        <mapping class="com.cgg.Buspassdetails.PassDetails" />
         
 
     </session-factory>

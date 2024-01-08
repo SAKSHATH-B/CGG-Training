@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-background">
-  <a class="navbar-brand" href="index.jsp"><span class="fa fa-asterisk"></span>TechBlog</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="index.jsp"
+    ><span class="fa fa-asterisk"></span>TechBlog</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -9,9 +19,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="#"><span class="fa fa-bell"></span>Home</a>
       </li>
-      
+
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           <span class="fa fa-check-square-o"></span>Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -22,18 +40,31 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><span class="fa fa-address-card"></span>Contact</a>
+        <a class="nav-link" href="#"
+          ><span class="fa fa-address-card"></span>Contact</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.jsp"><span class="fa fa-user-circle"></span>Login</a>
+        <a class="nav-link" href="login.jsp"
+          ><span class="fa fa-user-circle"></span>Login</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="register.jsp"><span class="fa fa-user-plus"></span>SignUp</a>
+        <a class="nav-link" href="register.jsp"
+          ><span class="fa fa-user-plus"></span>SignUp</a
+        >
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" role="search">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+        Search
+      </button>
     </form>
   </div>
 </nav>

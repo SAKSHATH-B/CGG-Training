@@ -15,32 +15,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      .banner-background {
-        clip-path: polygon(
-          0 16%,
-          15% 0,
-          15% 0%,
-          85% 0%,
-          85% 100%,
-          100% 0,
-          100% 86%,
-          100% 86%,
-          85% 100%,
-          15% 100%,
-          15% 0,
-          0 100%
-        );
-      }
-    </style>
     <title>Register Page</title>
   </head>
   <body>
     <%@ include file="normal_navbar.jsp" %>
-    <main
-      class="primary-background banner-background"
-      style="padding-bottom: 50px"
-    >
+    <main class="primary-background" style="padding-bottom: 50px">
       <div class="container">
         <div class="row">
           <div class="col-md-6 offset-md-3">

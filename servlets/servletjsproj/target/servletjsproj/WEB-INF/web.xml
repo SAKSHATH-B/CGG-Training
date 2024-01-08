@@ -64,6 +64,15 @@
     <url-pattern>/RegisterServlet</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>AllUsers</servlet-name>
+    <jsp-file>/all_users.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllUsers</servlet-name>
+    <url-pattern>/all_users</url-pattern>
+  </servlet-mapping>
+
   <welcome-file-list>
     <welcome-file>home.html</welcome-file>
   </welcome-file-list>

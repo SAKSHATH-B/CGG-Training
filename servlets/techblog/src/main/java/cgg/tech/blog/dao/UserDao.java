@@ -34,7 +34,7 @@ public class UserDao {
     return f;
   }
 
-  //fetch user based on username and password
+  //fetch user based on email and password
   public User getUserByEmailAndPassword(String email, String password) {
     User user = null;
     String query = "select * from user1 where email=? and password=?";
@@ -53,11 +53,33 @@ public class UserDao {
         user.setAbout(rs.getString("about"));
         user.setId(rs.getInt("id"));
         user.setProfile(rs.getString("profile"));
+        user.setRdate(rs.getTimestamp("rdate"));
       }
     } catch (SQLException e) {
       e.printStackTrace();
     }
 
     return user;
+  }
+
+  public boolean updateUser(User user) {
+    boolean f = false;
+    try {
+      String query =
+        "update user1 set name=?,email=?,password=?,gender=?,about=?,profile=? where id=?";
+      PreparedStatement p = conn.prepareStatement(query);
+      p.setString(1, user.getName());
+      p.setString(2, user.getEmail());
+      p.setString(3, user.getPassword());
+      p.setString(4, user.getGender());
+      p.setString(5, user.getAbout());
+      p.setString(6, user.getProfile());
+      p.setInt(7, user.getId());
+      p.executeUpdate();
+      f = true;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return f;
   }
 }

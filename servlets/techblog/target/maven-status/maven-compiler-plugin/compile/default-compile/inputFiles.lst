@@ -3,3 +3,7 @@ c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\se
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\helper\ConnectionProvider.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\RegisterServlet.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\User.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\EditServlet.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\LogoutServlet.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\Message.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\filters\MyFilter.java

@@ -17,7 +17,13 @@ isELIgnored="false" %> <%@ page errorPage="errorPage.jsp" %>
       <h2>This is true block - 3>2</h2>
     </a:if>
 
-    <%! int n1 = 200; int n2 = 0; String content=null; %> <% int division =
+    <%! int n1 = 200; int n2 = 10; String content="null"; %> <% int division =
     n1/n2; %> <%= division %><%= content.length() %>
+
+    <h1>
+      This is testing page for application scope declared variable in
+      jstlex.jsp.<br />
+    </h1>
+    <h1><a:out value="${count}"></a:out></h1>
   </body>
 </html>

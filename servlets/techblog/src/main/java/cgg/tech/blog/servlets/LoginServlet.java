@@ -1,6 +1,7 @@
 package cgg.tech.blog.servlets;
 
 import cgg.tech.blog.dao.UserDao;
+import cgg.tech.blog.entities.Message;
 import cgg.tech.blog.entities.User;
 import cgg.tech.blog.helper.ConnectionProvider;
 import jakarta.servlet.ServletException;
@@ -25,11 +26,19 @@ public class LoginServlet extends HttpServlet {
 
     User user = userDao.getUserByEmailAndPassword(email, password);
 
+    resp.setContentType("text/html");
+    // PrintWriter writer = resp.getWriter();
     if (user == null) {
       //display error...
-      resp.setContentType("text/html");
-      PrintWriter writer = resp.getWriter();
-      writer.println("Invalid Credentials! Try again...");
+      // writer.println("Invalid Credentials! Try again...");
+      Message message = new Message(
+        "Invalid Credentials! Try again...",
+        "error",
+        "alert-danger"
+      );
+      HttpSession session = req.getSession();
+      session.setAttribute("msg", message);
+      resp.sendRedirect("login.jsp");
     } else {
       HttpSession session = req.getSession();
       session.setAttribute("user", user);

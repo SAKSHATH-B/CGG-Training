@@ -2,6 +2,8 @@ package com.cgg.Buspassdetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,60 +21,56 @@ import java.util.Date;
 public class PassDetails {
 
   @Id
-  @Column(name = "bp_appl_id", length = 14, nullable = false)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "bp_appl_id", length = 14)
   private String bpApplId;
 
-  @Column(name = "inst_dist_id", nullable = false)
+  @Column(name = "inst_dist_id")
   private int instDistId;
 
-  @Column(name = "inst_mandal_id", nullable = false)
+  @Column(name = "inst_mandal_id")
   private int instMandalId;
 
   @Column(name = "inst_univ_id", length = 25)
   private String instUnivId;
 
-  @Column(name = "inst_id", length = 200, nullable = false)
+  @Column(name = "inst_id", length = 200)
   private String instId;
 
-  @Column(name = "student_course_id", length = 100, nullable = false)
+  @Column(name = "student_course_id", length = 100)
   private String studentCourseId;
 
-  @Column(name = "present_course_year", length = 25, nullable = false)
+  @Column(name = "present_course_year", length = 25)
   private String presentCourseYear;
 
-  @Column(name = "student_admission_no", length = 25, nullable = false)
+  @Column(name = "student_admission_no", length = 25)
   private String studentAdmissionNo;
 
-  @Column(name = "jrny_fromplace", length = 125, nullable = false)
+  @Column(name = "jrny_fromplace", length = 125)
   private String jrnyFromPlace;
 
-  @Column(name = "jrny_toplace", length = 125, nullable = false)
+  @Column(name = "jrny_toplace", length = 125)
   private String jrnyToPlace;
 
-  @Column(name = "jrny_via", length = 125, nullable = false)
+  @Column(name = "jrny_via", length = 125)
   private String jrnyVia;
 
-  @Column(name = "student_resaddress", length = 250, nullable = false)
+  @Column(name = "student_resaddress", length = 250)
   private String studentResAddress;
 
-  @Column(name = "student_resadd_dist_id", nullable = false)
+  @Column(name = "student_resadd_dist_id")
   private int studentResAddDistId;
 
-  @Column(name = "student_resadd_mandal_id", nullable = false)
+  @Column(name = "student_resadd_mandal_id")
   private int studentResAddMandalId;
 
-  @Column(name = "student_resadd_village_id", nullable = false)
+  @Column(name = "student_resadd_village_id")
   private int studentResAddVillageId;
 
-  @Column(name = "student_cellno", nullable = false, precision = 15, scale = 0)
+  @Column(name = "student_cellno", precision = 15, scale = 0)
   private Long studentCellNo;
 
-  @Column(
-    name = "student_qualification",
-    nullable = false,
-    precision = 3,
-    scale = 0
-  )
+  @Column(name = "student_qualification", precision = 3, scale = 0)
   private String studentQualification;
 
   @ManyToOne
@@ -144,7 +142,8 @@ public class PassDetails {
     Long studentSscPassyear,
     String studentSscPasstype,
     char studentGender,
-    String studentAadharno
+    String studentAadharno,
+    Center centerId
   ) {
     this.bpApplId = bpApplId;
     this.instDistId = instDistId;
@@ -380,5 +379,13 @@ public class PassDetails {
 
   public void setStudentAadharno(String studentAadharno) {
     this.studentAadharno = studentAadharno;
+  }
+
+  public Center getCenterId() {
+    return centerId;
+  }
+
+  public void setCenterId(Center centerId) {
+    this.centerId = centerId;
   }
 }

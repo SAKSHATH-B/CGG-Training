@@ -129,6 +129,7 @@
         <!-- <mapping class="com.cgg.EnversAuditing.Customer" /> -->
 
         <mapping class="com.cgg.Buspassdetails.PassDetails" />
+        <mapping class="com.cgg.Buspassdetails.Center" />
         
 
     </session-factory>

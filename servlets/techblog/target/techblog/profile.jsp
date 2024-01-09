@@ -1,6 +1,8 @@
-<%@ page errorPage="error_page.jsp" %>
-<!-- <%@ page import="cgg.tech.blog.entities.User" %>  -->
-<% User user = (User)session.getAttribute("user"); %>
+<%@ page errorPage="error_page.jsp" %> <%@ page
+import="cgg.tech.blog.entities.User" %> <%@ page
+import="cgg.tech.blog.entities.Message" %> <% User user =
+(User)session.getAttribute("user"); %> <% Message msg =
+(Message)session.getAttribute("msg");%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,6 +69,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"
+              ><span class="fa fa-asterisk"></span>DoPost</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#"
               ><span class="fa fa-address-card"></span>Contact</a
             >
           </li>
@@ -94,6 +102,13 @@
     </nav>
     <!-- end-navbar -->
 
+    <%=request.getContextPath()%>/pics/<%= user.getProfile()%> <% if(msg!=null){
+    %>
+    <div class="alert <%= msg.getCssClass()%>" role="alert">
+      <%= msg.getContent() %>
+    </div>
+    <% } %>
+
     <!-- Modal -->
     <!-- profile-modal -->
     <div
@@ -120,8 +135,8 @@
           <div class="modal-body">
             <div class="container text-center">
               <img
-                src="pics/<%= user.getProfile() %>"
-                alt=""
+                src="<%=request.getContextPath()%>/pics/<%= user.getProfile()%>"
+                alt="Default.png"
                 class="mb-3"
                 style="border-radius: 50%; max-width: 150px"
               /><br />

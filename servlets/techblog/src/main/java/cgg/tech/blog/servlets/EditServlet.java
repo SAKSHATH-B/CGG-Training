@@ -1,8 +1,10 @@
 package cgg.tech.blog.servlets;
 
 import cgg.tech.blog.dao.UserDao;
+import cgg.tech.blog.entities.Message;
 import cgg.tech.blog.entities.User;
 import cgg.tech.blog.helper.ConnectionProvider;
+import cgg.tech.blog.helper.Helper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -47,9 +50,30 @@ public class EditServlet extends HttpServlet {
 
     boolean ans = userDao.updateUser(user);
     if (ans) {
-      writer.println("Updated to db");
+      String path =
+        req.getServletContext().getRealPath("/") +
+        "pics/" +
+        File.separator +
+        user.getProfile();
+      Helper.deleteFile(path);
+
+      if (Helper.saveFile(part.getInputStream(), path)) {
+        writer.println("Updated to db");
+        Message msg = new Message(
+          "Profile Updated...",
+          "success",
+          "alert-success"
+        );
+        session.setAttribute("msg", msg);
+      }
     } else {
-      writer.println("Not updated");
+      Message msg = new Message(
+        "Something went wrong...",
+        "error",
+        "alert-danger"
+      );
+      session.setAttribute("msg", msg);
     }
+    resp.sendRedirect("profile.jsp");
   }
 }

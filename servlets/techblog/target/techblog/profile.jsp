@@ -1,6 +1,5 @@
 <%@ page errorPage="error_page.jsp" %> <%@ page
-import="cgg.tech.blog.entities.User" %> <%@ page
-import="cgg.tech.blog.entities.Message" %> <% User user =
+import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.ConnectionProvider,java.util.List" %> <% User user =
 (User)session.getAttribute("user"); %> <% Message msg =
 (Message)session.getAttribute("msg");%>
 <!DOCTYPE html>
@@ -68,7 +67,11 @@ import="cgg.tech.blog.entities.Message" %> <% User user =
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"
+            <a
+              class="nav-link"
+              href="#"
+              data-toggle="modal"
+              data-target="#add-post-modal"
               ><span class="fa fa-asterisk"></span>DoPost</a
             >
           </li>
@@ -102,8 +105,7 @@ import="cgg.tech.blog.entities.Message" %> <% User user =
     </nav>
     <!-- end-navbar -->
 
-    <%=request.getContextPath()%>/pics/<%= user.getProfile()%> <% if(msg!=null){
-    %>
+    <% if(msg!=null){ %>
     <div class="alert <%= msg.getCssClass()%>" role="alert">
       <%= msg.getContent() %>
     </div>
@@ -280,6 +282,85 @@ import="cgg.tech.blog.entities.Message" %> <% User user =
       </div>
     </div>
     <!-- end-profile-modal -->
+
+    <!-- Add Post modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="add-post-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Provide the post detail
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="addpostservlet" method="post">
+              <div class="form-group">
+                <select name="" id="" class="form-control">
+                  <option selected disabled>---select category---</option>
+                  <% PostDao postDao = new PostDao(ConnectionProvider.getConnection());
+                    List<Category> categories = postDao.getAllCategories();
+                      for(Category cat:categories){
+                  %>
+                      <option value="<%= cat.getCname()%>"><%= cat.getCname() %></option>
+                  <%}%>
+                </select>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Title"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Enter post content here (if any)"
+                  style="height: 200px"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Enter your program Here (if any)"
+                  style="height: 200px"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="">Select your pic</label>
+                <input type="file" class="form-control" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end add post modal -->
   </body>
 
   <script

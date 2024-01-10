@@ -3,10 +3,6 @@ package cgg.spring.core;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
 public class App {
 
   public static void main(String[] args) {
@@ -17,7 +13,7 @@ public class App {
     ApplicationContext context = new ClassPathXmlApplicationContext(
       "spring.xml"
     );
-    Triangle triangle = (Triangle) context.getBean("triangle");
+    Triangle triangle = (Triangle) context.getBean("triangle1");
     triangle.draw();
   }
 }

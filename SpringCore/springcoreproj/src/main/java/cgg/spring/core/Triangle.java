@@ -1,6 +1,12 @@
 package cgg.spring.core;
 
-public class Triangle {
+import java.util.List;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware, BeanNameAware {
 
   //   private String type;
   //   private int height;
@@ -33,6 +39,7 @@ public class Triangle {
   private Point pointA;
   private Point pointB;
   private Point pointC;
+  private ApplicationContext context;
 
   public void draw() {
     System.out.println(
@@ -69,4 +76,31 @@ public class Triangle {
   public void setPointC(Point pointC) {
     this.pointC = pointC;
   }
+
+  @Override
+  public void setApplicationContext(ApplicationContext context)
+    throws BeansException {
+    this.context = context;
+  }
+
+  @Override
+  public void setBeanName(String name) {
+    System.out.println("Bean name is : " + name);
+  }
+  //collection of objects
+  // private List<Point> points;
+
+  // public List<Point> getPoints() {
+  //   return points;
+  // }
+
+  // public void setPoints(List<Point> points) {
+  //   this.points = points;
+  // }
+
+  // public void draw() {
+  //   points.forEach(p ->
+  //     System.out.println("Point = (" + p.getX() + "," + p.getY() + ")")
+  //   );
+  // }
 }

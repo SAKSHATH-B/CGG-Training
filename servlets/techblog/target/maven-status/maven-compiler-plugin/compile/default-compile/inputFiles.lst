@@ -1,10 +1,13 @@
-c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\dao\UserDao.java
-c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\helper\Helper.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\LoginServlet.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\helper\ConnectionProvider.java
-c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\RegisterServlet.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\dao\PostDao.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\User.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\EditServlet.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\LogoutServlet.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\Category.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\Message.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\dao\UserDao.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\helper\Helper.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\servlets\RegisterServlet.java
+c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\entities\Post.java
 c:\Users\CGG\Documents\Training\servlets\techblog\src\main\java\cgg\tech\blog\filters\MyFilter.java

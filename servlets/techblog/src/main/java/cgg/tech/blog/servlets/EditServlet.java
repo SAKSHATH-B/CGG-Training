@@ -44,6 +44,7 @@ public class EditServlet extends HttpServlet {
     user.setPassword(userPassword);
     user.setGender(userGender);
     user.setAbout(userAbout);
+    String oldFile = user.getProfile();
     user.setProfile(imageName);
 
     UserDao userDao = new UserDao(ConnectionProvider.getConnection());
@@ -55,7 +56,16 @@ public class EditServlet extends HttpServlet {
         "pics/" +
         File.separator +
         user.getProfile();
-      Helper.deleteFile(path);
+
+      //delete code for removing old profile pic from localStorage
+      String pathOldFile =
+        req.getServletContext().getRealPath("/") +
+        "pics" +
+        File.separator +
+        oldFile;
+      if (!oldFile.equals("default.png")) {
+        Helper.deleteFile(pathOldFile);
+      }
 
       if (Helper.saveFile(part.getInputStream(), path)) {
         writer.println("Updated to db");

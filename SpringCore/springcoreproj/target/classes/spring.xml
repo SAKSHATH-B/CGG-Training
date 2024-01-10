@@ -13,22 +13,64 @@
         <constructor-arg type="int" value="20" />
     </bean> -->
 
-    <bean id="triangle" class="cgg.spring.core.Triangle">
-        <property name="pointA" ref="zeroPoint" />
-        <property name="pointB" ref="point2" />
-        <property name="pointC" ref="point3" />
+    <!-- <bean id="triangle" class="cgg.spring.core.Triangle" name="tringl"> -->
+    <bean id="parenttriangle" class="cgg.spring.core.Triangle" name="tringl" abstract="true">
+        <!-- used for collections -->
+        <!-- <property name="points">
+            <list>
+                <ref bean="zeroPoint" />
+                <ref bean="point2" />
+                <ref bean="point3" />
+            </list>
+        </property> -->
+
+        <!-- <property name="pointA" ref="pointA" />
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" /> -->
+        
+        <property name="pointA" ref="pointA" />
+
+        <!-- <property name="pointB">
+            <bean class="cgg.spring.core.Point">
+                <property name="x" value="-20" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
+        <property name="pointC">
+            <bean class="cgg.spring.core.Point">
+                <property name="x" value="0" />
+                <property name="y" value="20" />
+            </bean>
+        </property> -->
     </bean>
 
-    <bean id="zeroPoint" class="cgg.spring.core.Point">
+    <!-- implementing inheritance -->
+    <bean id="triangle1" class="cgg.spring.core.Triangle" parent="parenttriangle">
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" />
+    </bean>
+    <bean id="triangle2" class="cgg.spring.core.Triangle" parent="parenttriangle">
+        <property name="pointB" ref="pointB" />
+    </bean>
+
+    <bean id="pointA" class="cgg.spring.core.Point" name="origin">
         <property name="x" value="0" />
         <property name="y" value="0" />
     </bean>
-    <bean id="point2" class="cgg.spring.core.Point">
+    <bean id="pointB" class="cgg.spring.core.Point">
         <property name="x" value="-20" />
         <property name="y" value="0" />
     </bean>
-    <bean id="point3" class="cgg.spring.core.Point">
+    <bean id="pointC" class="cgg.spring.core.Point">
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
+
+    <alias name="triangle" alias="triangle-alias" />
+    <alias name="zeroPoint" alias="origin-alias" />
+
+    <!-- <bean id="employee" class="cgg.spring.core.Employee" scope="prototype">
+
+    </bean> -->
+    <context:component-scan base-package="cgg.spring.core"></context:component-scan>
 </beans>

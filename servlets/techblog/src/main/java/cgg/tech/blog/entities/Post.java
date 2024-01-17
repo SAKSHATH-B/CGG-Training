@@ -4,30 +4,51 @@ import java.util.Date;
 
 public class Post {
 
+  public Post() {}
+
   private int pId;
   private String pTitle;
   private String pContent;
   private String pCode;
   private String pPic;
-  private Date pDate;
   private int catId;
+  private int userId;
+  private Date pDate;
 
-  public Post() {}
+  public Post(
+    int pId,
+    String pTitle,
+    String pContent,
+    String pCode,
+    String pPic,
+    int catId,
+    int userId,
+    Date pDate
+  ) {
+    this.pId = pId;
+    this.pTitle = pTitle;
+    this.pContent = pContent;
+    this.pCode = pCode;
+    this.pPic = pPic;
+    this.catId = catId;
+    this.userId = userId;
+    this.pDate = pDate;
+  }
 
   public Post(
     String pTitle,
     String pContent,
     String pCode,
     String pPic,
-    Date pDate,
-    int catId
+    int catId,
+    int userId
   ) {
     this.pTitle = pTitle;
     this.pContent = pContent;
     this.pCode = pCode;
     this.pPic = pPic;
-    this.pDate = pDate;
     this.catId = catId;
+    this.userId = userId;
   }
 
   public int getpId() {
@@ -70,6 +91,14 @@ public class Post {
     this.pPic = pPic;
   }
 
+  public int getCatId() {
+    return catId;
+  }
+
+  public void setCatId(int catId) {
+    this.catId = catId;
+  }
+
   public Date getpDate() {
     return pDate;
   }
@@ -78,11 +107,11 @@ public class Post {
     this.pDate = pDate;
   }
 
-  public int getCatId() {
-    return catId;
+  public int getUserId() {
+    return userId;
   }
 
-  public void setCatId(int catId) {
-    this.catId = catId;
+  public void setUserId(int userId) {
+    this.userId = userId;
   }
 }

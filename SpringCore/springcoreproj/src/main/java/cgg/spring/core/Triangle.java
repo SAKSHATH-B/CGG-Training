@@ -3,10 +3,12 @@ package cgg.spring.core;
 import java.util.List;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
+public class Triangle {
 
   //   private String type;
   //   private int height;
@@ -39,7 +41,8 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
   private Point pointA;
   private Point pointB;
   private Point pointC;
-  private ApplicationContext context;
+
+  // private ApplicationContext context;
 
   public void draw() {
     System.out.println(
@@ -76,17 +79,37 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
   public void setPointC(Point pointC) {
     this.pointC = pointC;
   }
+  // 1.lifecycle callback methods by - implements InitializingBean, DisposableBean
+  // @Override
+  // public void afterPropertiesSet() throws Exception {
+  //   System.out.println("Initializing bean - calling the init method");
+  // }
 
-  @Override
-  public void setApplicationContext(ApplicationContext context)
-    throws BeansException {
-    this.context = context;
-  }
+  // @Override
+  // public void destroy() throws Exception {
+  //   System.out.println("Disposable bean - destory method called for triangle");
+  // }
 
-  @Override
-  public void setBeanName(String name) {
-    System.out.println("Bean name is : " + name);
-  }
+  // 2.create our own methods for init and destruction for lifecycle callbacks - not tied using spring but executed using container of spring
+  // public void myInit() {
+  //   System.out.println("myInit method called for triangle");
+  // }
+
+  // public void cleanUp() {
+  //   System.out.println("cleanUp method is called");
+  // }
+
+  // using applicationcontextaware and beannameaware
+  // @Override
+  // public void setApplicationContext(ApplicationContext context)
+  //   throws BeansException {
+  //   this.context = context;
+  // }
+
+  // @Override
+  // public void setBeanName(String name) {
+  //   System.out.println("Bean name is : " + name);
+  // }
   //collection of objects
   // private List<Point> points;
 

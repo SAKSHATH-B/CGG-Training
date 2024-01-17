@@ -1,0 +1,10 @@
+cgg\spring\core\App.class
+cgg\spring\core\Circle.class
+cgg\spring\core\DisplayNameBeanPostProcessor.class
+cgg\spring\core\Point.class
+cgg\spring\core\MyBeanFactoryPostProcessor.class
+cgg\spring\core\Shape.class
+cgg\spring\core\emp.class
+cgg\spring\core\Employee.class
+cgg\spring\core\Triangle.class
+cgg\spring\core\ParentEmployee.class

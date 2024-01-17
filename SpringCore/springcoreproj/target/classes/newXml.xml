@@ -1,0 +1,72 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+        <!-- <bean id="orgInfo" class="cgg.spring.core.OrgInfo">
+            <property name="stuArr">
+                <array>
+                    <ref bean="student1" />
+                    <ref bean="student2" />
+                    <ref bean="student3" />
+                    <ref bean="student1" />
+                </array>
+            </property>
+            <property name="stuList">
+                <list>
+                    <ref bean="student1" />
+                    <ref bean="student2" />
+                    <ref bean="student3" />
+                    <ref bean="student1" />
+                </list>
+            </property>
+            <property name="stuSet">
+                <list>
+                    <ref bean="student1" />
+                    <ref bean="student2" />
+                    <ref bean="student3" />
+                    <ref bean="student1" />
+                </list>
+            </property>
+        </bean> -->
+
+        <bean name="companyInfo" class="cgg.spring.core.CompanyInfo">
+            <property name="empIdAndNameMap">
+                <map>
+                    <entry key="1" value="name1"></entry>
+                    <entry key="2" value="name2"></entry>
+                </map>
+            </property>
+            <property name="studentIdMap">
+                <map>
+                    <entry key="1111" value-ref="student1"></entry>
+                    <entry key="2222" value-ref="student2"></entry>
+                </map>
+            </property>
+        </bean>
+
+        <bean id="student1" class="cgg.spring.core.Student">
+            <property name="studentId" value="1111" />
+            <property name="studentName" value="name1" />
+            <property name="email" value="name1@gmail.com" />
+            <property name="gender" value="Male" />
+        </bean>
+        <bean id="student2" class="cgg.spring.core.Student">
+            <property name="studentId" value="2222" />
+            <property name="studentName" value="name2" />
+            <property name="email" value="name2@gmail.com" />
+            <property name="gender" value="Male" />
+        </bean>
+        <bean id="student3" class="cgg.spring.core.Student">
+            <property name="studentId" value="3333" />
+            <property name="studentName" value="name3" />
+            <property name="email" value="name3@gmail.com" />
+            <property name="gender" value="Male" />
+        </bean>
+        
+
+</beans>

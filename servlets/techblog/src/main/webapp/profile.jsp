@@ -111,6 +111,38 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
     </div>
     <% } %>
 
+    <main>
+      <div class="container">
+        <div class="row mt-4 d-flex">
+          <!-- categories -->
+          <div class="list-group">
+            <a href="#!" onclick="getPost(0,this)" class="c-link list-group-item list-group-item-action active">
+              All Posts
+            </a>
+            <%
+              PostDao pd = new PostDao(ConnectionProvider.getConnection());
+              List<Category> list = pd.getAllCategories();
+                for(Category cc:list){
+                  %>
+                  <a href="#!" onclick="getPost('<%= cc.getCid() %>',this)" class="c-link list-group-item list-group-item-action"><%= cc.getCname() %></a>
+                <%}%>
+                
+            
+          </div>
+          <!-- posts -->
+          <div class="col-md-8">
+            <div class="container text-center" id="loader">
+              <i class="fa fa-refresh fa-4x fa-spin"></i>
+              <h3 class="mt-2">Loading...</h3>
+            </div>
+            <div class="container-fluid" id="post-container">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- Modal -->
     <!-- profile-modal -->
     <div
@@ -308,27 +340,29 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
             </button>
           </div>
           <div class="modal-body">
-            <form action="addpostservlet" method="post">
+            <form action="addpostservlet" method="post" id="myform" enctype="multipart/form-data">
               <div class="form-group">
-                <select name="" id="" class="form-control">
+                <select name="cid" id="" class="form-control">
                   <option selected disabled>---select category---</option>
                   <% PostDao postDao = new PostDao(ConnectionProvider.getConnection());
                     List<Category> categories = postDao.getAllCategories();
                       for(Category cat:categories){
                   %>
-                      <option value="<%= cat.getCname()%>"><%= cat.getCname() %></option>
+                      <option value="<%= cat.getCid()%>"><%= cat.getCname() %></option>
                   <%}%>
                 </select>
               </div>
               <div class="form-group">
                 <input
                   type="text"
+                  name="ptitle"
                   class="form-control"
                   placeholder="Enter Title"
                 />
               </div>
               <div class="form-group">
                 <textarea
+                  name="pcontent"
                   class="form-control"
                   placeholder="Enter post content here (if any)"
                   style="height: 200px"
@@ -336,6 +370,7 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
               </div>
               <div class="form-group">
                 <textarea
+                  name="pcode"
                   class="form-control"
                   placeholder="Enter your program Here (if any)"
                   style="height: 200px"
@@ -343,19 +378,12 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
               </div>
               <div class="form-group">
                 <label for="">Select your pic</label>
-                <input type="file" class="form-control" />
+                <input type="file" name="ppic" class="form-control" />
+              </div>
+              <div class="container text-center">
+                <button type="submit" class="btn btn-outline-primary">Save</button>
               </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -374,6 +402,8 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"
   ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- editbutton -->
   <script>
@@ -407,5 +437,61 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
         editStatus = false;
       });
     });
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("#myform").on('submit',function(event){
+        event.preventDefault();
+        let f = new FormData(this)
+        $.ajax({
+          url:"addpostservlet",
+          type:'post',
+          data:f,
+          success:function(data,textStatus,jqXHR){
+            //success
+            console.log(data)
+            if(data.trim()=="done"){
+              swal("Good job!", "Post saved successfully...", "success");
+            }else{
+              swal("Error", "Something went wrong..Try again!", "error");
+            }
+          },
+          error:function(jqXHR,textStatus,errorThrown){
+            //error
+            swal("Error", "Something went wrong..Try again!", "error");
+          },
+          processData:false,
+          contentType:false
+        })
+      })
+    })
+  </script>
+
+  <!-- loadpost -->
+  <script>
+    function getPost(cid,temp){
+      $("#loader").show();
+      $("#post-container").hide();
+      $('.c-link').removeClass('active')
+      $.ajax({
+        url:"loadpost.jsp",
+        data:{catId:cid},
+        success:function(data,textStatus,jqXHR){
+          console.log(data)
+          $("#loader").hide()
+          $("#post-container").show()
+          $("#post-container").html(data)
+          $(temp).addClass('active')
+          
+        },
+
+        contentType:false
+      })
+    }
+    $(document).ready(function(){
+      
+      getPost(0);
+      
+    })
   </script>
 </html>

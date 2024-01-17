@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- <beans default-init-method="myInit" default-destroy-method="cleanUp"> -->
+<!-- <beans> -->
+
+    <!-- using setter method dependancy injection -->
     <!-- <bean id="triangle" class="cgg.spring.core.Triangle">
         <property name="type" value="Equilateral" />
         <property name="height" value="5" />
     </bean> -->
+
+    <!-- using constructor method dependancy injection -->
     <!-- <bean id="triangle" class="cgg.spring.core.Triangle">
         <constructor-arg index="0" value="Equilateral" />
         <constructor-arg type="int" value="20" />
     </bean> -->
 
     <!-- <bean id="triangle" class="cgg.spring.core.Triangle" name="tringl"> -->
-    <bean id="parenttriangle" class="cgg.spring.core.Triangle" name="tringl" abstract="true">
+    <!-- <bean id="parenttriangle" class="cgg.spring.core.Triangle" name="tringl"> -->
         <!-- used for collections -->
         <!-- <property name="points">
             <list>
@@ -28,7 +41,7 @@
         <property name="pointB" ref="pointB" />
         <property name="pointC" ref="pointC" /> -->
         
-        <property name="pointA" ref="pointA" />
+        <!-- <property name="pointA" ref="pointA" /> -->
 
         <!-- <property name="pointB">
             <bean class="cgg.spring.core.Point">
@@ -42,16 +55,18 @@
                 <property name="y" value="20" />
             </bean>
         </property> -->
-    </bean>
+    <!-- </bean> -->
+
+    
 
     <!-- implementing inheritance -->
-    <bean id="triangle1" class="cgg.spring.core.Triangle" parent="parenttriangle">
+    <!-- <bean id="triangle1" class="cgg.spring.core.Triangle" parent="parenttriangle">
         <property name="pointB" ref="pointB" />
         <property name="pointC" ref="pointC" />
     </bean>
     <bean id="triangle2" class="cgg.spring.core.Triangle" parent="parenttriangle">
         <property name="pointB" ref="pointB" />
-    </bean>
+    </bean> -->
 
     <bean id="pointA" class="cgg.spring.core.Point" name="origin">
         <property name="x" value="0" />
@@ -61,16 +76,30 @@
         <property name="x" value="-20" />
         <property name="y" value="0" />
     </bean>
-    <bean id="pointC" class="cgg.spring.core.Point">
+    <bean id="center" class="cgg.spring.core.Point">
         <property name="x" value="0" />
         <property name="y" value="20" />
     </bean>
 
+
+    <!-- <bean class="cgg.spring.core.DisplayNameBeanPostProcessor" />
+    <bean class="cgg.spring.core.MyBeanFactoryPostProcessor" />
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="propertyConfig.properties" />
+    </bean> -->
+
     <alias name="triangle" alias="triangle-alias" />
     <alias name="zeroPoint" alias="origin-alias" />
 
-    <!-- <bean id="employee" class="cgg.spring.core.Employee" scope="prototype">
-
+    <!-- <bean id="circle" class="cgg.spring.core.Circle">
     </bean> -->
-    <context:component-scan base-package="cgg.spring.core"></context:component-scan>
+
+    <context:annotation-config />
+
+    <context:component-scan base-package="cgg.spring.core" />
+    
+    <!-- <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" /> -->
+    <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /> -->
+
+    
 </beans>

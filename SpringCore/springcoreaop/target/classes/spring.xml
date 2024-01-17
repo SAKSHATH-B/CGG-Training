@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy />
+
+    <bean name="payment" class="cgg.springcore.aop.PaymentServiceImpl" />
+    <bean name="myAspect" class="cgg.springcore.aop.MyAspect" />
+
+    <bean name="circle" class="cgg.springcore.aop.Circle">
+        <property name="name" value="Full Moon Circle"></property>
+        <property name="nickName" value="chand"></property>
+    </bean>
+
+    <aop:config>
+        <aop:aspect id="myAspect" ref="myAspect">
+            <aop:pointcut id="pointcut" expression="execution(* get*())" />
+            <aop:around pointcut-ref="pointcut" method="aroundadvice" />
+        </aop:aspect>
+    </aop:config>
+</beans>

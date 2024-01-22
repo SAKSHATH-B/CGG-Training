@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <!-- <bean name="message" class="cgg.spring.core.Message" init-method="init" destroy-method="destroy"> -->
+        <!-- <bean name="message" class="cgg.spring.core.Message">
+            <property name="messageId" value="101" />
+            <property name="message" value="Kaise hai.?" />
+        </bean> -->
+
+        <bean name="message" class="cgg.spring.core.Message" p:messageId="1010" p:message="Hello.Milka!!" />
+
+        <!-- <bean class="cgg.spring.core.MessageBeanPostProcessor1" />
+        <bean class="cgg.spring.core.MessageBeanPostProcessor2" /> -->
+
+        <!-- <bean class="cgg.spring.core.MsgContextStartEvent"></bean>
+        <bean class="cgg.spring.core.MsgContextStopEvent"></bean> -->
+
+        <!-- <bean id="ticketVendingMachine" class="cgg.spring.core.TicketVendingMachine" scope="singleton">
+            <lookup-method name="generateTicket" bean="ticket" />
+        </bean>
+
+        <bean id="ticket" class="cgg.spring.core.Ticket" scope="prototype" /> -->
+
+</beans>

@@ -12,10 +12,11 @@ List<Post> posts = null;
         posts = postdao.getAllPosts();
     }else{
         posts = postdao.getPostbyCategory(catId);
-        if(posts.size()==0){
-            out.println("<h3 class='display-3 text-center'>No Posts in this Category</h3>");
-        }
     }
+if(posts.size()==0){
+    out.println("<h3 class='display-3 text-center'>No Posts in this Category</h3>");
+    return;
+}
 
 for(Post p : posts){
     %>
@@ -26,7 +27,11 @@ for(Post p : posts){
             <div class="card-body">
                 <b class="card-title"><%= p.getpTitle() %></b>
                 <p class="card-text"><%= p.getpContent() %></p>
-                <pre><%= p.getpCode() %></pre>
+            </div>
+            <div class="card-footer text-center primary-background">
+                <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span>10</span></a>
+                <a href="showblogpost.jsp?post_id=<%= p.getpId() %>" class="btn btn-outline-light btn-sm">Read More...</a>
+                <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>10</span></a>
             </div>
         </div>
     </div>

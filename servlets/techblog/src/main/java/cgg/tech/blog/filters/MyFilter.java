@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = { "/profile.jsp" })
+@WebFilter(urlPatterns = { "/profile.jsp", "/showblogpost.jsp" })
 public class MyFilter implements Filter {
 
   @Override

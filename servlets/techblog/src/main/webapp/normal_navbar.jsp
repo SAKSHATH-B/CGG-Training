@@ -17,7 +17,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><span class="fa fa-bell"></span>Home</a>
+        <a class="nav-link" href="profile.jsp"
+          ><span class="fa fa-bell"></span>Home</a
+        >
       </li>
 
       <li class="nav-item dropdown">

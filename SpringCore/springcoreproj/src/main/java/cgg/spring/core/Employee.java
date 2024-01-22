@@ -8,6 +8,22 @@ public class Employee {
   private int eid;
   private String ename;
   private String address;
+  private Pancard pancard;
+
+  public Employee(int eid, String ename, String address, Pancard pancard) {
+    this.eid = eid;
+    this.ename = ename;
+    this.address = address;
+    this.pancard = pancard;
+  }
+
+  public Pancard getPancard() {
+    return pancard;
+  }
+
+  public void setPancard(Pancard pancard) {
+    this.pancard = pancard;
+  }
 
   public Employee() {}
 

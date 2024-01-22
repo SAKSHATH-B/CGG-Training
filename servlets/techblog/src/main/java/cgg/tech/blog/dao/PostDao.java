@@ -64,7 +64,7 @@ public class PostDao {
 
   public List<Post> getAllPosts() {
     List<Post> posts = new ArrayList<>();
-    String query = "select * from post";
+    String query = "select * from post order by pid desc";
     try {
       PreparedStatement ps = conn.prepareStatement(query);
       ResultSet rs = ps.executeQuery();
@@ -131,5 +131,32 @@ public class PostDao {
     }
 
     return posts;
+  }
+
+  public Post getPostById(int postId) {
+    Post post = null;
+    try {
+      PreparedStatement ps = conn.prepareStatement(
+        "select * from post where pid=?"
+      );
+      ps.setInt(1, postId);
+      ResultSet rs = ps.executeQuery();
+      while (rs.next()) {
+        int pId = rs.getInt(1);
+        String pTitle = rs.getString(2);
+        String pContent = rs.getString(3);
+        String pCode = rs.getString(4);
+        String pPic = rs.getString(5);
+        int cId = rs.getInt(6);
+        Timestamp pDate = rs.getTimestamp(7);
+        int userId = rs.getInt(8);
+
+        post = new Post(pId, pTitle, pContent, pCode, pPic, cId, userId, pDate);
+      }
+    } catch (Exception e) {
+      // TODO: handle exception
+      e.printStackTrace();
+    }
+    return post;
   }
 }

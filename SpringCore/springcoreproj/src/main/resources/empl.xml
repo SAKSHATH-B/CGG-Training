@@ -23,14 +23,35 @@
         <property name="ename" value="hello" />
     </bean> -->
 
-    <bean id="parentemployee" abstract="true">
+    <!-- <bean id="parentemployee" abstract="true">
         <property name="eid" value="1000" />
         <property name="ename" value="SeanMurphy" />
     </bean>
     <bean id="employee" class="cgg.spring.core.Employee" parent="parentemployee">
         <property name="ename" value="Sean Murphy" />
         <property name="address" value="Gachibowli" />
+    </bean> -->
+
+    <!-- <bean id="employee" class="cgg.spring.core.Employee" autowire="byType">
+        <property name="eid" value="101"></property>
+        <property name="ename" value="Sakshath"></property>
+        <property name="address" value="Hyd"></property>
     </bean>
 
+    <bean id="pancard1" class="cgg.spring.core.Pancard">
+        <property name="panHolderName" value="Sakshath"></property>
+        <property name="panNo" value="Ekupb1044m"></property>
+    </bean> -->
+
+    <bean id="employee" class="cgg.spring.core.Employee" autowire="constructor">
+        <constructor-arg name="eid" value="101" />
+        <constructor-arg name="ename" value="Sakshath" />
+        <constructor-arg name="address" value="Hyd" />
+    </bean>
+
+    <bean id="pancard" class="cgg.spring.core.Pancard">
+        <property name="panHolderName" value="Sakshath"></property>
+        <property name="panNo" value="Ekupb1044m"></property>
+    </bean>
 
 </beans>

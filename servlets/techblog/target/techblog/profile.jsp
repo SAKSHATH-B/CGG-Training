@@ -20,6 +20,13 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
     />
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
+    <style>
+      .body{
+        background-image: url(images/background.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
     <!-- navbar -->
@@ -42,7 +49,7 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="profile.jsp"
               ><span class="fa fa-bell"></span>Home</a
             >
           </li>
@@ -489,8 +496,8 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
       })
     }
     $(document).ready(function(){
-      
-      getPost(0);
+      let postRef = $('.c-link')[0]
+      getPost(0,postRef);
       
     })
   </script>

@@ -21,7 +21,7 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
     <style>
-      .body{
+      body{
         background-image: url(images/background.jpg);
         background-attachment: fixed;
         background-size: cover;
@@ -397,6 +397,8 @@ import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.PostDao,cgg.tech.blog.helper.
     </div>
     <!-- end add post modal -->
   </body>
+
+  <script src="./js/myscript.js" type="text/javascript" language="javascript"></script>
 
   <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"

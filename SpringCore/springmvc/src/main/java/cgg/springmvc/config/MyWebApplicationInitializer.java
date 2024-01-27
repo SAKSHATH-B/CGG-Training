@@ -1,5 +1,6 @@
 package cgg.springmvc.config;
 
+import jakarta.servlet.MultipartConfigElement;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
@@ -18,6 +19,9 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
     ServletRegistration.Dynamic registration = servletContext.addServlet(
       "spring",
       servlet
+    );
+    registration.setMultipartConfig(
+      new MultipartConfigElement("/org", 2097152, 4194304, 0)
     );
     registration.setLoadOnStartup(1);
     registration.addMapping("/");

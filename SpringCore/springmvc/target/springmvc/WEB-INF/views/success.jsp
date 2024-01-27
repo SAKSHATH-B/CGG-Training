@@ -7,7 +7,7 @@
     <title>Success Page</title>
   </head>
   <body>
-    <h1 class="text-center">${header}</h1>
+    <h1 class="text-center">${head}</h1>
     <p class="text-center">${desc}</p>
     <h1 style="color: green">${msg}</h1>
     <hr />

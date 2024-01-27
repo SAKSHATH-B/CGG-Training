@@ -1,0 +1,5 @@
+prodcrud\controller\MainController.class
+prodcrud\config\AppConfig.class
+prodcrud\config\MyWebInit.class
+prodcrud\dao\ProductDao.class
+prodcrud\model\Product.class

@@ -1,8 +1,8 @@
-cgg\springmvc\config\AppConfig.class
 cgg\springmvc\controller\HomeController.class
-cgg\springmvc\config\MyWebApplicationInitializer.class
 cgg\springmvc\dao\UserDaoImpl.class
 cgg\springmvc\dao\UserDao.class
+cgg\springmvc\config\AppConfig.class
+cgg\springmvc\config\MyWebApplicationInitializer.class
 cgg\springmvc\entities\User.class
 cgg\springmvc\services\UserService.class
 cgg\springmvc\controller\ContactController.class

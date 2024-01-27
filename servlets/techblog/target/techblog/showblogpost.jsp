@@ -1,10 +1,13 @@
 <%@ page errorPage="error_page.jsp" %> 
 <%@ page
-import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.*,cgg.tech.blog.helper.ConnectionProvider,java.util.List"
+import="cgg.tech.blog.entities.*,cgg.tech.blog.dao.*,cgg.tech.blog.helper.ConnectionProvider,java.util.List,java.text.DateFormat"
 %> 
 <% int postId = Integer.parseInt(request.getParameter("post_id")); 
 PostDao postDao = new PostDao(ConnectionProvider.getConnection()); 
 Post p = postDao.getPostById(postId); 
+
+LikeDao likeDao = new LikeDao(ConnectionProvider.getConnection());
+
 %>
 <% User user = (User)session.getAttribute("user"); %>
 
@@ -25,7 +28,7 @@ Post p = postDao.getPostById(postId);
     />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      .body{
+      body{
         background-image: url(images/background.jpg);
         background-attachment: fixed;
         background-size: cover;
@@ -53,6 +56,10 @@ Post p = postDao.getPostById(postId);
     <title><%= p.getpTitle() %>||Techblog</title>
   </head>
   <body>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v19.0" nonce="Q8KDqv8D"></script>
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark primary-background">
       <a class="navbar-brand" href="index.jsp"
@@ -151,12 +158,11 @@ Post p = postDao.getPostById(postId);
                   <div class="col-md-8">
                     <%
                       UserDao userDao = new UserDao(ConnectionProvider.getConnection());
-                      User u = userDao.getUserByUserId(p.getUserId());
                     %>
-                    <p class="post-user-info"><a href=""><%= u.getName() %></a> has posted.</p>
+                    <p class="post-user-info"><a href=""><%= userDao.getUserByUserId(p.getUserId()).getName() %></a> has posted.</p>
                   </div>
                   <div class="col-md-4">
-                    <p class="post-date"><%= p.getpDate() %></p>
+                    <p class="post-date"><%= DateFormat.getDateTimeInstance().format(p.getpDate()) %></p>
                   </div>
                 </div>
                 <p class="post-content"><%= p.getpContent() %>
@@ -168,9 +174,10 @@ Post p = postDao.getPostById(postId);
               </p>
               </div>
               <div class="card-footer primary-background">
-                <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span>10</span></a>
+                <a href="#!" onclick="doLike('<%= p.getpId() %>','<%= user.getId() %>')" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span class="like-counter"><%= likeDao.countLikeOnPost(p.getpId()) %></span></a>
                 <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>10</span></a>
               </div>
+              <div class="fb-comments" data-href="http://localhost:8080/techblog/showblogpost.jsp?post_id=<%= p.getpId() %>" data-width="" data-numposts="5"></div>
             </div>
           </div>
         </div>
@@ -427,7 +434,7 @@ Post p = postDao.getPostById(postId);
     <!-- end add post modal -->
     
   </body>
-
+  <script src="./js/myscript.js" type="text/javascript" language="javascript"></script>
 
   <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -504,4 +511,5 @@ Post p = postDao.getPostById(postId);
       })
     })
   </script>
+
 </html>

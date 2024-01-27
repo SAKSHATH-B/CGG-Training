@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,8 +12,14 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="<c:url value='/resources/css/styles.css' />" />
+    <script src="<c:url value='/resources/js/script.js' />"></script>
   </head>
   <body>
+    <img
+      src="<c:url value='/resources/images/20240105_170918.jpg' />"
+      alt="myImg"
+    />
     <div class="container">
       <div class="row">
         <div class="card mx-auto bg-primary mt-5" style="width: 50%">

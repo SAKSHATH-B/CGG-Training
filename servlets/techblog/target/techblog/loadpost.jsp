@@ -32,7 +32,7 @@ for(Post p : posts){
                 <p class="card-text"><%= p.getpContent() %></p>
             </div>
             <div class="card-footer text-center primary-background">
-                <a href="#!" onclick="doLike('<%= p.getpId() %>','<%= user.getId() %>')" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span class="like-counter"><%= likeDao.countLikeOnPost(p.getpId()) %></span></a>
+                <a href="#!" onclick="doLike('<%= p.getpId() %>','<%= user.getId() %>')" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span id="<%= p.getpId() %>" class="like-counter"><%= likeDao.countLikeOnPost(p.getpId()) %></span></a>
                 <a href="showblogpost.jsp?post_id=<%= p.getpId() %>" class="btn btn-outline-light btn-sm">Read More...</a>
                 <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>10</span></a>
             </div>

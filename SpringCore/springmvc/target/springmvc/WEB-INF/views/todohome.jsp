@@ -49,8 +49,18 @@ uri="http://www.springframework.org/tags/form"%> <%@ page isELIgnored="false" %>
             <c:forEach items="${todos}" var="t">
               <div class="card">
                 <div class="card-body">
-                  <h3><c:out value="${t.todoTitle}"></c:out></h3>
-                  <p><c:out value="${t.todoContent}"></c:out></p>
+                  <div class="row">
+                    <div class="col-md-10">
+                      <h3><c:out value="${t.todoTitle}"></c:out></h3>
+                      <p><c:out value="${t.todoContent}"></c:out></p>
+                    </div>
+                    <div class="col-md-2 text-right">
+                      <form action="deleteTodo" method="post">
+                        <input type="hidden" name="todoId" value="${t.todoId}">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
             </c:forEach>

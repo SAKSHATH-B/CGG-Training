@@ -1,20 +1,38 @@
 package cgg.springmvc.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Todo {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int todoId;
 
   private String todoTitle;
   private String todoContent;
   private Date todoDate;
 
-  public Todo(String todoTitle, String todoContent, Date todoDate) {
+  public Todo(int todoId, String todoTitle, String todoContent, Date todoDate) {
+    this.todoId = todoId;
     this.todoTitle = todoTitle;
     this.todoContent = todoContent;
     this.todoDate = todoDate;
   }
 
   public Todo() {}
+
+  public int getTodoId() {
+    return todoId;
+  }
+
+  public void setTodoId(int todoId) {
+    this.todoId = todoId;
+  }
 
   public String getTodoTitle() {
     return todoTitle;
@@ -43,7 +61,9 @@ public class Todo {
   @Override
   public String toString() {
     return (
-      "Todo [todoTitle=" +
+      "Todo [todoId=" +
+      todoId +
+      ", todoTitle=" +
       todoTitle +
       ", todoContent=" +
       todoContent +

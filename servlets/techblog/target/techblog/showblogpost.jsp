@@ -174,7 +174,7 @@ LikeDao likeDao = new LikeDao(ConnectionProvider.getConnection());
               </p>
               </div>
               <div class="card-footer primary-background">
-                <a href="#!" onclick="doLike('<%= p.getpId() %>','<%= user.getId() %>')" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span class="like-counter"><%= likeDao.countLikeOnPost(p.getpId()) %></span></a>
+                <a href="#!" onclick="doLike('<%= p.getpId() %>','<%= user.getId() %>')" class="btn btn-outline-light btn-sm"><i class="fa fa-thumbs-o-up"></i><span id="<%= p.getpId() %>" class="like-counter"><%= likeDao.countLikeOnPost(p.getpId()) %></span></a>
                 <a href="#!" class="btn btn-outline-light btn-sm"><i class="fa fa-commenting-o"></i><span>10</span></a>
               </div>
               <div class="fb-comments" data-href="http://localhost:8080/techblog/showblogpost.jsp?post_id=<%= p.getpId() %>" data-width="" data-numposts="5"></div>

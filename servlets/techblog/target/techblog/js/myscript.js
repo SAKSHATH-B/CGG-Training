@@ -12,12 +12,11 @@ function doLike(pid, uid) {
     data: d,
     success: function (data, textStatus, jqXHR) {
       console.log(data);
-      console.log("done");
       if (data) {
-        console.log("done");
-        let c = $(".like-counter").html();
+        let id = "#" + $.escapeSelector(pid);
+        let c = $(id).html();
         c++;
-        $(".like-counter").html(c);
+        $(id).html(c);
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {

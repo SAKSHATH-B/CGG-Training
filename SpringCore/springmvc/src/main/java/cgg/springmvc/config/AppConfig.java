@@ -1,5 +1,6 @@
 package cgg.springmvc.config;
 
+import cgg.springmvc.entities.Todo;
 import cgg.springmvc.entities.User;
 import cgg.springmvc.interceptors.MyInterceptor;
 import java.util.Properties;
@@ -59,7 +60,7 @@ public class AppConfig implements WebMvcConfigurer {
     p.put("hibernate.format_sql", "true");
     p.put("hibernate.show_sql", "true");
     factory.setHibernateProperties(p);
-    factory.setAnnotatedClasses(User.class);
+    factory.setAnnotatedClasses(User.class, Todo.class);
     return factory;
   }
 

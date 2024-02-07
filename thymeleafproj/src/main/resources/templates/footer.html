@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+  </head>
+  <body>
+    <footer id="fragmentTag" th:fragment="footer1(title,subtitle)">
+      <div>
+        <h3 th:text="${title}"></h3>
+        <h3 th:text="${subtitle}"></h3>
+        <h3>Share</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
+          assumenda.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

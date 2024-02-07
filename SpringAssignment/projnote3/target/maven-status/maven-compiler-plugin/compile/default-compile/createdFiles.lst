@@ -1,0 +1,4 @@
+com\stackroute\keepnote\config\ApplicationContextConfig.class
+com\stackroute\keepnote\config\WebAppInitializer.class
+com\stackroute\keepnote\controller\NoteController.class
+com\stackroute\keepnote\model\Note.class

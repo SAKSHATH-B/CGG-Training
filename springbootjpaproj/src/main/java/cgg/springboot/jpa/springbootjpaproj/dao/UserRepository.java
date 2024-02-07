@@ -11,6 +11,10 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
   public List<User> findByNameAndCity(String name, String city);
 
+  public List<User> findByStatusContaining(String word);
+
+  public List<User> findByStatusLike(String pattern);
+
   @Query("select u from User u")
   public List<User> getAllUsers();
 

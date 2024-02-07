@@ -1,0 +1,21 @@
+body {
+  background: #8b8b8b;
+}
+section {
+  background: rgb(65, 207, 226);
+  color: white;
+  padding: 30px;
+}
+.container {
+  background: #ffffff;
+  padding: 40px;
+  font-family: "Roboto";
+}
+.profile {
+  border-radius: 50%;
+}
+img {
+  width: 300px;
+  height: 400px;
+  margin-left: auto;
+}

@@ -1,0 +1,14 @@
+package cgg.smartcontactmanager.smartcontactmanager.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController {
+
+  @RequestMapping("/adm")
+  public String admindashboard() {
+    return "admin/admin_dashboard";
+  }
+}

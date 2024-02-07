@@ -108,7 +108,17 @@ public class SpringbootjpaprojApplication {
 
     System.out.println("===========================================");
 
-    List<User> users = bean.getUsers();
-    users.forEach(System.out::println);
+    // List<User> users = bean.getUsers();
+    // users.forEach(System.out::println);
+
+    System.out.println("===========================================");
+
+    // List<User> byStatusContaining = bean.findByStatusContaining("hamali");
+    // byStatusContaining.forEach(System.out::println);
+
+    System.out.println("===========================================");
+
+    List<User> byStatusLike = bean.findByStatusLike("%Tech%");
+    byStatusLike.forEach(System.out::println);
   }
 }

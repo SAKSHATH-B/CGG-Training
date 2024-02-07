@@ -32,12 +32,12 @@ public class BookController {
 
   @GetMapping("/books/{bookId}")
   public ResponseEntity<Book> getBook(@PathVariable("bookId") int id) {
-    Optional<Book> book = null;
+    Book book = null;
     book = bookService.getBook(id);
     if (book == null) {
       return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
-    return ResponseEntity.of(book);
+    return ResponseEntity.of(Optional.of(book));
   }
 
   @PostMapping("/books")

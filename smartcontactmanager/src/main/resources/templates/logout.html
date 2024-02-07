@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{base::layout(~{::section})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logout Page</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6">
+            <form th:action="@{/logout1}" method="post" class="text-center">
+              <h3>Are You Sure that you want to logout ?</h3>
+              <button type="submit" class="btn btn-md">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

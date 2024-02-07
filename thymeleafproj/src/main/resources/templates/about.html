@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thymeleaf Proj</title>
+  </head>
+  <body>
+    <h1>About View</h1>
+    <h2>My Name is <span th:text="${#strings.toUpperCase(name)}"></span></h2>
+    <h2>Length of name is <span th:text="${#strings.length(name)}"></span></h2>
+    <h3>Today's date is <span th:text="${date}"></span></h3>
+    <hr />
+    <div th:with="a=5,b=10,n=${name}">
+      <h1>A : <span th:text="${a}"></span></h1>
+      <h1 th:text="'B : '+${b}"></h1>
+      <h2>A + B = <span th:text="${a*b}"></span></h2>
+      <h3 th:text="'Owner is '+${#strings.toUpperCase(n)}"></h3>
+    </div>
+    <h2>A + B = <span th:text="${a}"></span></h2>
+  </body>
+</html>

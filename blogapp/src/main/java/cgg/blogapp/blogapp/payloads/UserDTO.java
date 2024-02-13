@@ -1,6 +1,7 @@
 package cgg.blogapp.blogapp.payloads;
 
 import cgg.blogapp.blogapp.entities.Post;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -31,5 +32,8 @@ public class UserDTO {
   @NotEmpty
   private String about;
 
+  private String role;
+
+  @JsonIgnore
   private List<Post> posts;
 }

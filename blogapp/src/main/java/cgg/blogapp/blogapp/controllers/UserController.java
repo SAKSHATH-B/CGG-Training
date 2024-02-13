@@ -2,11 +2,15 @@ package cgg.blogapp.blogapp.controllers;
 
 import cgg.blogapp.blogapp.payloads.UserDTO;
 import cgg.blogapp.blogapp.services.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/users")
+@SecurityRequirement(name = "scheme1")
+@CrossOrigin("*")
 public class UserController {
+
+  @Autowired
+  private BCryptPasswordEncoder passwordEncoder;
 
   UserService userService;
 
@@ -31,6 +40,7 @@ public class UserController {
   public ResponseEntity<UserDTO> createUser(
     @Valid @RequestBody UserDTO userDTO
   ) {
+    userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
     UserDTO createdUser = userService.createUser(userDTO);
     return new ResponseEntity<UserDTO>(createdUser, HttpStatus.CREATED);
   }

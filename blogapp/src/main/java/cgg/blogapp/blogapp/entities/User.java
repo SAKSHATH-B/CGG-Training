@@ -7,15 +7,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "user1")
 @Data
-public class User {
+public class User implements UserDetails {
 
   @Id
   @GeneratedValue
@@ -34,7 +39,49 @@ public class User {
   @Column(name = "user_about")
   private String about;
 
-  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  private String role;
+
+  @OneToOne(mappedBy = "user")
   @JsonIgnore
-  private List<Post> posts = new ArrayList<>();
+  private RefreshToken refreshToken;
+
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+  private List<Post> posts;
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    HashSet<SimpleGrantedAuthority> authorities = new HashSet<SimpleGrantedAuthority>();
+    authorities.add(new SimpleGrantedAuthority(role));
+    return authorities;
+  }
+
+  @Override
+  public String getUsername() {
+    return name;
+  }
+
+  @Override
+  public String getPassword() {
+    return password;
+  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
 }

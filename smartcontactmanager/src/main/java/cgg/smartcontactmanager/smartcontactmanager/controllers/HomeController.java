@@ -43,9 +43,15 @@ public class HomeController {
   }
 
   @GetMapping("/about")
-  public String about(Model model) {
-    model.addAttribute("title", "About-Smart Contact Manager");
+  public String about(Model model, HttpSession session) {
+    // model.addAttribute("title", "About-Smart Contact Manager");
+    session.setAttribute("message1", "This is session message");
     return "about";
+  }
+
+  @RequestMapping("/services")
+  public String home() {
+    return "services";
   }
 
   @RequestMapping("/signup")

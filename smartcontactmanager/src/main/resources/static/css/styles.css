@@ -23,3 +23,72 @@ body {
   border: 1px solid #9c9c9c;
   background-color: white;
 }
+/* 
+@media only screen and(max-width:600px) {
+  .sidebar {
+    display: none;
+    width: 80% !important;
+    background: white;
+    height: 100vh;
+    position: fixed;
+    padding-top: 20px;
+  }
+  .content {
+    margin-left: 0% !important;
+  }
+} */
+.sidebar a {
+  display: block;
+  width: 100%;
+  padding: 10px 25px;
+  text-decoration: none;
+  color: gray;
+}
+.sidebar a:hover {
+  /* background: #e2e2e2; */
+  background: white;
+}
+.sidebar.divider {
+  height: 5px;
+  width: 100%;
+  background: #e2e2e2;
+  margin-top: 10px;
+}
+/* .content {
+  margin-left: 20%;
+} */
+.sidebar .crossBtn {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.sidebar {
+  display: inline-block; /* Change display to inline-block */
+  width: 20%; /* Set a width for the sidebar */
+  /* background: white; */
+  height: 100vh;
+  /* position: fixed; */
+  /* padding-top: 20px; */
+}
+
+.content {
+  display: inline-block; /* Display content inline-block */
+  width: 80%; /* Set a width for the content */
+  margin-left: 20%; /* Add margin to align content beside sidebar */
+  padding-left: 5%;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens */
+  }
+  .content {
+    width: 100%; /* Expand content to full width on smaller screens */
+    margin-left: 5%; /* Remove margin on smaller screens */
+  }
+}

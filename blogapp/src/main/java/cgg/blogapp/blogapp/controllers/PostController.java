@@ -2,6 +2,7 @@ package cgg.blogapp.blogapp.controllers;
 
 import cgg.blogapp.blogapp.payloads.PostDTO;
 import cgg.blogapp.blogapp.services.PostService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,10 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/posts")
+@SecurityRequirement(name = "scheme1")
 public class PostController {
 
   @Autowired
   private PostService postService;
+
+  @GetMapping("/test")
+  public String test() {
+    return "Testing";
+  }
 
   @PostMapping("/")
   public ResponseEntity<PostDTO> create(@RequestBody PostDTO postDTO) {

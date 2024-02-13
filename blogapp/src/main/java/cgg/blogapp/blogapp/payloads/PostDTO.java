@@ -2,6 +2,7 @@ package cgg.blogapp.blogapp.payloads;
 
 import cgg.blogapp.blogapp.entities.Category;
 import cgg.blogapp.blogapp.entities.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import lombok.Data;
 
@@ -14,6 +15,8 @@ public class PostDTO {
   private String imageName;
   private LocalDateTime addedDate;
   private Category category;
+
+  @JsonIgnore
   private User user;
 
   public PostDTO() {

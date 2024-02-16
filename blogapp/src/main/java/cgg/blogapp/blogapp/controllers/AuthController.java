@@ -19,6 +19,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-// @CrossOrigin("*")
+@CrossOrigin("*")
 public class AuthController {
 
   @Autowired
@@ -74,7 +75,7 @@ public class AuthController {
       JwtResponse jwtResponse = JwtResponse
         .builder()
         .token(token)
-        .userDTO(user)
+        .user(user)
         .refreshToken(refreshToken.getRefreshToken())
         .build();
 
@@ -96,7 +97,7 @@ public class AuthController {
       .builder()
       .refreshToken(refreshToken.getRefreshToken())
       .token(token)
-      .userDTO(userDto)
+      .user(userDto)
       .build();
   }
 

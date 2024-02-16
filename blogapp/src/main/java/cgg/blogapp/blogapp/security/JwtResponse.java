@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class JwtResponse {
 
   private String token;
-  private UserDTO userDTO;
+  private UserDTO user;
   private String refreshToken;
 }

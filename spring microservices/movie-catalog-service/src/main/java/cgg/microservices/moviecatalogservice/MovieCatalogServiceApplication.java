@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class MovieCatalogServiceApplication {
 
   @Bean
-  @LoadBalanced
+  // @LoadBalanced
   public RestTemplate getRestTemplate() {
     return new RestTemplate();
   }
@@ -19,6 +19,12 @@ public class MovieCatalogServiceApplication {
   @Bean
   public RestClient getRestClient() {
     return RestClient.create();
+  }
+
+  @Bean
+  @LoadBalanced
+  RestClient.Builder getRestClientBuilder() {
+    return RestClient.builder();
   }
 
   public static void main(String[] args) {

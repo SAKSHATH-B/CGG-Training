@@ -78,8 +78,8 @@ body {
 .content {
   display: inline-block; /* Display content inline-block */
   width: 80%; /* Set a width for the content */
-  margin-left: 20%; /* Add margin to align content beside sidebar */
-  padding-left: 5%;
+  margin-left: 10%; /* Add margin to align content beside sidebar */
+  /* padding-left: 5%; */
 }
 
 /* Media query for smaller screens */
@@ -91,4 +91,11 @@ body {
     width: 100%; /* Expand content to full width on smaller screens */
     margin-left: 5%; /* Remove margin on smaller screens */
   }
+}
+
+.my_profile_picture {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
 }

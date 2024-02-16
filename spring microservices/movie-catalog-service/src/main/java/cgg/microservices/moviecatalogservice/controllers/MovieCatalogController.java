@@ -22,18 +22,22 @@ public class MovieCatalogController {
   @Autowired
   private RestClient restClient;
 
+  @Autowired
+  private RestClient.Builder restClientBuilder;
+
   @RequestMapping("/{userId}")
   public List<CatalogItem> getCatalog(@PathVariable String userId) {
-    UserRating ratings = restTemplate.getForObject(
-      "http://ratings-data-service/ratingsdata/users/" + userId,
-      UserRating.class
-    );
+    // UserRating ratings = restTemplate.getForObject(
+    //   "http://ratings-data-service/ratingsdata/users/" + userId,
+    //   UserRating.class
+    // );
 
-    // UserRating ratings = restClient
-    //   .get()
-    //   .uri("http://ratings-data-service/ratingsdata/users/" + userId)
-    //   .retrieve()
-    //   .body(UserRating.class);
+    UserRating ratings = restClientBuilder
+      .build()
+      .get()
+      .uri("http://ratings-data-service/ratingsdata/users/" + userId)
+      .retrieve()
+      .body(UserRating.class);
 
     // List<Rating> ratings = Arrays.asList(
     //   new Rating("1234", 4),
@@ -45,16 +49,17 @@ public class MovieCatalogController {
       .getUserRating()
       .stream()
       .map(rating -> {
-        Movie movie = restTemplate.getForObject(
-          "http://movie-info-service/movies/" + rating.getMovieId(),
-          Movie.class
-        );
+        // Movie movie = restTemplate.getForObject(
+        //   "http://movie-info-service/movies/" + rating.getMovieId(),
+        //   Movie.class
+        // );
 
-        // Movie movie = restClient
-        //   .get()
-        //   .uri("http://movie-info-service/movies/" + rating.getMovieId())
-        //   .retrieve()
-        //   .body(Movie.class);
+        Movie movie = restClientBuilder
+          .build()
+          .get()
+          .uri("http://movie-info-service/movies/" + rating.getMovieId())
+          .retrieve()
+          .body(Movie.class);
         return new CatalogItem(movie.getName(), "Test", rating.getRating());
       })
       .collect(Collectors.toList());

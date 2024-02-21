@@ -54,6 +54,7 @@ public class User implements UserDetails {
   @JsonIgnore
   private RefreshToken refreshToken;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
   private List<Post> posts;
 

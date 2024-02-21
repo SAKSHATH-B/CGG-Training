@@ -1,6 +1,7 @@
 package cgg.blogapp.blogapp.payloads;
 
 import cgg.blogapp.blogapp.entities.Post;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.util.List;
@@ -19,5 +20,6 @@ public class CategoryDTO {
   @Size(min = 10, message = "min size of category description is 10")
   private String categoryDescription;
 
+  @JsonIgnore
   private List<Post> posts;
 }

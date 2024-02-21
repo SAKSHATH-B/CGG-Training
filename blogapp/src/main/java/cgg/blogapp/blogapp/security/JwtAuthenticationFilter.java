@@ -47,6 +47,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       token = header.substring(7);
 
       try {
+        System.out.println("----------------");
         username = jwtHelper.getUsernameFromToken(token);
         System.out.println(username);
       } catch (IllegalArgumentException e) {

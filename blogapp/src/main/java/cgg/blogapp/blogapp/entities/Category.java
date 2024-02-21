@@ -1,6 +1,5 @@
 package cgg.blogapp.blogapp.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,10 +9,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Category {
 
   @Id
@@ -27,6 +34,5 @@ public class Category {
   private String categoryDescription;
 
   @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-  @JsonIgnore
   private List<Post> posts = new ArrayList<>();
 }

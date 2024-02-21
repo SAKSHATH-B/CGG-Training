@@ -14,4 +14,6 @@ public interface PostService {
   public PostDTO getPostById(int postId);
 
   public List<PostDTO> getAllPosts();
+
+  public List<PostDTO> loadPostUserWise(int userId);
 }

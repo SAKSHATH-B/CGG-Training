@@ -72,4 +72,14 @@ public class PostServiceImpl implements PostService {
   public PostDTO postToPostDto(Post post) {
     return modelMapper.map(post, PostDTO.class);
   }
+
+  @Override
+  public List<PostDTO> loadPostUserWise(int userId) {
+    List<Post> posts = postRepository.findByUserUserId(userId);
+    System.out.println("------------------" + posts);
+    return posts
+      .stream()
+      .map(p -> modelMapper.map(p, PostDTO.class))
+      .collect(Collectors.toList());
+  }
 }

@@ -1,0 +1,56 @@
+/* Example Google Fonts link */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace !important;
+  color: white;
+  background-color: #1b1b1b;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-bottom: solid 1px #aaa;
+  background-color: #eee;
+}
+
+nav a {
+  text-decoration: none;
+  min-width: 9rem;
+  padding: 0.5rem;
+  color: #1b1b1b;
+  border: solid 1px rgb(22, 22, 22);
+  text-align: center;
+  border-radius: 0.2rem;
+}
+
+nav a[aria-current="page"] {
+  color: #000;
+  background-color: #d4d4d4;
+}
+main {
+  padding: 1rem;
+}
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+.project-link {
+  text-decoration: none;
+  color: #212121;
+  margin-top: 5px;
+  border: 2px solid #212121;
+  background-color: #fff;
+  padding: 10px 30px;
+  border-radius: 8px;
+}

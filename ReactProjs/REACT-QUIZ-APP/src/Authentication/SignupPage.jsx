@@ -32,7 +32,7 @@ const SignupPage = () => {
       <CustomNavbar />
 
       <div
-        className="container-fluid mx-3   d-flex justify-content-center   p-5    
+        className="container-fluid  bg-black d-flex justify-content-center m-0  p-5    
        "
       >
         <div className="signinBack d-flex  align-items-center justify-content-center col-md-4 white-shadow  ">
@@ -58,7 +58,7 @@ const SignupPage = () => {
               <i className="fa fa-facebook-f text-white  " />
             </a>
             <a href="#" className="social mx-2 p-2   text-white">
-              <i className="fa-brands fa-google"></i>
+              <i class="fa-brands fa-google"></i>
             </a>
             <a href="#" className="social mx-2 p-2   text-white">
               <i className="fa fa-linkedin" />

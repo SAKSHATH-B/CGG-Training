@@ -207,29 +207,34 @@ const Quiz = ({ categoryName }) => {
 
   return (
     <Container fluid className="d-flex p-0 " style={{ userSelect: "none" }}>
-      <div
-        style={{ width: 220 }}
-        className="right border-3 border-top-0 border-bottom-0    border border-dark    "
-      >
-        <h5 className="text-center  ">Question Pallete</h5>
+      {quizSubmitted ? null : (
+        <div
+          style={{ width: 220 }}
+          className="right border-3 border-top-0 border-bottom-0    border border-dark    "
+        >
+          <h5 className="text-center  ">Question Pallete</h5>
 
-        <hr />
-        <div className="d-flex flex-wrap gap-3 ps-2 ">
-          {fecthedQuestions?.map((q, index) => {
-            return (
-              <Button
-                key={index}
-                onClick={() => handleButtonPallete(index)}
-                active={true}
-                color={index === currentQuestionIndex ? "primary" : "secondary"}
-                className="mt-2  "
-              >
-                {index + 1}
-              </Button>
-            );
-          })}
+          <hr />
+          <div className="d-flex flex-wrap gap-3 ps-2 ">
+            {fecthedQuestions?.map((q, index) => {
+              return (
+                <Button
+                  key={index}
+                  onClick={() => handleButtonPallete(index)}
+                  active={true}
+                  color={
+                    index === currentQuestionIndex ? "primary" : "secondary"
+                  }
+                  className="mt-2  "
+                >
+                  {index + 1}
+                </Button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
+
       <div style={{ height: "100vh", width: "100vw" }}>
         <div className="h-100  ">
           {loading ? (
@@ -286,6 +291,7 @@ const Quiz = ({ categoryName }) => {
                             )
                           }
                         ></Radio>
+
                         {option}
                       </div>
                     ))}

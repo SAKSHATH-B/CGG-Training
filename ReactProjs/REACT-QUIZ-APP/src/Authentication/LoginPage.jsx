@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import * as yup from "Yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Label } from "reactstrap";
 import CustomNavbar from "../Components/CustomNavbar";
 import toast from "react-hot-toast";
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  validateCaptcha,
+} from "react-simple-captcha";
 
 const LoginPage = () => {
   const initialValues = {
@@ -20,34 +25,34 @@ const LoginPage = () => {
     console.log("submitted");
     console.log(values);
 
-    //hit api and get response from backend
+    let user_captcha_value =
+      document.getElementById("user_captcha_input").value;
 
-    // if got  response navigate to dashboard
-    //else toast incorrect name or password
-    toast.error("incorrect name or password", { duration: 1000 });
+    if (validateCaptcha(user_captcha_value)) {
+  
+      toast.error("Incorrect name or password", { duration: 1000 });
+    } else {
+      // CAPTCHA does not match, show error message
+      toast.error("CAPTCHA does not match", { duration: 1000 });
+    }
   };
 
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
   return (
-<<<<<<< HEAD
-    <div className="bg-black vh-100">
-      <CustomNavbar />
-      <div className=" container-fluid   d-flex justify-content-center   loginpageContainer p-5">
-        <div className="  d-flex white-shadow">
-          <div className="form-container   col-md-6 text-white  border-end   p-3 sign-in-container ">
-=======
     <div className="bg-black vh-100   ">
       <CustomNavbar />
       <div className=" container-fluid   d-flex justify-content-center    py-5  loginpageContainer   ">
         <div className="  d-flex white-shadow    ">
           <div className="form-container col-md-6 text-white  border-end   p-3 sign-in-container ">
->>>>>>> d44d79447b184cde691f15116c22f66e8e48565f
             <h1 className="text-center">Sign in</h1>
             <div className="social-container text-center p-2">
               <a href="#" className="social mx-2 p-2     ">
                 <i className="fa fa-facebook-f text-white  " />
               </a>
               <a href="#" className="social mx-2 p-2   text-white">
-                <i className="fa-brands fa-google"></i>
+                <i class="fa-brands fa-google"></i>
               </a>
               <a href="#" className="social mx-2 p-2   text-white">
                 <i className="fa fa-linkedin" />
@@ -102,7 +107,7 @@ const LoginPage = () => {
                         name="password"
                         label="Password"
                         placeholder="qwert@123"
-                        className={`form-control bg-transparent border-0 border-bottom   rounded-0 ${
+                        className={`form-control bg-transparent border-0 border-bottom mb-2  rounded-0 ${
                           formik.touched.password &&
                           formik.errors.password &&
                           "is-invalid"
@@ -112,7 +117,16 @@ const LoginPage = () => {
                       <ErrorMessage
                         component="div"
                         name="password"
-                        className="text-danger"
+                        className="text-danger mb-2"
+                      />
+                    </div>
+                    <LoadCanvasTemplate />
+                    <div className="form-group mt-1 mb-3">
+                      <input
+                        type="text"
+                        id="user_captcha_input"
+                        placeholder="Enter Captcha"
+                        className="form-control bg-transparent text-white "
                       />
                     </div>
                     <div className="container text-center">

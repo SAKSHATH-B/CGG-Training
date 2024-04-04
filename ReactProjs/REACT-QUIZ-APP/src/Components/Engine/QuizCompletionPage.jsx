@@ -1,4 +1,6 @@
 import React from "react";
+import CustomNavbar from "../CustomNavbar";
+import { Button } from "reactstrap";
 
 const QuizCompletionPage = ({ marks, question_count }) => {
   function convertFractionToScaleOf5(marks, questionCount) {
@@ -16,10 +18,7 @@ const QuizCompletionPage = ({ marks, question_count }) => {
     return Math.min(Math.max(scaleValue, 1), 5);
   }
   return (
-    <div
-      className="border  border-2 border-start-0 border-top-0   border-black    d-flex  justify-content-center    "
-      style={{ minHeight: "400px" }}
-    >
+    <div className=" border  border-2 border-start-0 border-top-0  border-black vh-100 align-items-center  d-flex  justify-content-center  ">
       {/* <Confetti width={width} height={height} numberOfPieces={300} /> */}
       <div className="text-center ">
         {/* <Rating
@@ -32,6 +31,10 @@ const QuizCompletionPage = ({ marks, question_count }) => {
         <h3>
           {marks}/{question_count}
         </h3>
+
+        <p>
+          Click here to get back to <a href="/user/userDashboard">Home</a>Page
+        </p>
       </div>
     </div>
   );

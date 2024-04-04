@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import CustomNavbar from "./CustomNavbar";
-import { FullScreen } from "@chiragrupani/fullscreen-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SupportPage = () => {
-  let [isFullScreen, setFullScreen] = useState(false);
+  const { loginWithRedirect } = useAuth0();
+
   return (
     <div>
       <CustomNavbar />
       support page
+      <button
+        onClick={() => {
+          loginWithRedirect();
+        }}
+      >
+        LogIn
+      </button>
     </div>
   );
 };

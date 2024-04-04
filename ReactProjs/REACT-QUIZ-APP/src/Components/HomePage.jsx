@@ -12,7 +12,7 @@ const HomePage = () => {
 
   const text2 = " Welcome to BrainyBits ".split(" ");
   const text3 =
-    "   Where curiosity meets challenge, and every question   unlocks a world of knowledge!".split(
+    "Where curiosity meets challenge, and every question unlocks a world of knowledge!".split(
       " "
     );
   return (
@@ -20,13 +20,13 @@ const HomePage = () => {
       <HomeNavbar />
 
       <div
-        className=" container-fluid bg-black  p-0"
-        style={{ minHeight: 600 }}
+        className=" container-fluid bg-black  p-0  vh-100"
+        // style={{ minHeight: 600 }}
       >
         <div className="logo d-flex   ">
           <img src={logo} alt="" style={{ width: "40%" }} />
 
-          <div className="  align-items-center  ">
+          <div className="align-items-center">
             <h1 className="text-white ms-auto p-5 pb-2    ">
               {/* <p>
                 Unravel Your Mind
@@ -81,7 +81,7 @@ const HomePage = () => {
             <Link to="/login">
               <Button
                 size="lg"
-                className="border-gradient rounded-pill ms-5 px-5     "
+                className="border-gradient rounded-pill ms-5 px-5"
               >
                 Get Started
               </Button>
@@ -90,7 +90,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <footer className="bg-dark       text-white-50  ">BRAINYBITS</footer>
+      <footer className="bg-dark text-white-50">BRAINYBITS</footer>
     </>
   );
 };
